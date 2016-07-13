@@ -45,17 +45,16 @@ nav ul ul {
 	background-color: #eaf9fa;
 	text-overflow: none;
 	min-width: 130px;
-	width: 230px;
+	width: 250px;
 	margin-top: 8px;
 	margin-left:-20px;
-	padding: 0 20px;
-	padding: 30px;
+	padding: 0 20px 20px 20px;
 	border-radius: 0 0 20px 20px;
 }
 
 nav ul li:hover > ul {
 	z-index: 10;
-	height: 220px;
+	height: 225px;
 }
 
 .navlinks{
@@ -189,3 +188,9 @@ nav ul li:hover > ul {
 .entryform__list{
 	list-style: none;
 }
+
+
+
+
+
+
