@@ -8,10 +8,10 @@
 <nav class="nav">
   <h1 class="header">SwimTron</h1>
   <ul class="navlinks">
-    <li class="navlinks__listitem navlinks__listitem--current">
+    <li class="navlinks__listitem <%= "navlinks__listitem--current" if @current_page == "Contestant" %>">
       <a class="navlinks__link" href="entrant.html">Contestant</a>
     </li>
-    <li class="navlinks__listitem">
+    <li class="navlinks__listitem <%= "navlinks__listitem--current" if @current_page == "Events" %>">
       <a class="navlinks__link" href="events">Events</a>
       <ul>
         <li>
@@ -52,7 +52,7 @@
         </li>
       </ul>
     </li>
-    <li class="navlinks__listitem">
+    <li class="navlinks__listitem <%= "navlinks__listitem--current" if @current_page == "Winners" %>">
       <a class="navlinks__link" href="/">Winners</a>
     </li>
   </ul>
