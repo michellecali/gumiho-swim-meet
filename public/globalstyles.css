@@ -36,7 +36,7 @@ body{
 }
 
 nav ul ul {
-	display: block;
+	display: none;
 	font-family: Tahoma, Verdana, sans-serif;
 	list-style: none;
 	text-align: left;
@@ -53,6 +53,7 @@ nav ul ul {
 }
 
 nav ul li:hover > ul {
+	display: block;
 	z-index: 10;
 	height: 225px;
 }
