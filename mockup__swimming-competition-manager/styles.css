@@ -79,7 +79,6 @@ nav ul li:hover > ul {
 
 .navlinks__listitem:hover{
 	background-color: #eaf9fa;
-	z-index: 5
 }
 
 .navlinks__listitem--current{
