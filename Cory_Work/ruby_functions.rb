@@ -47,7 +47,7 @@ end
 def readerevents(thefilename)
 	goodies = File.open(thefilename, "r")
 	goodies.readlines.each_with_index do |line, index|
-		puts line if index%4 == 2
+		puts line.split(", ") if index%4 == 2
 	end
 
 end
@@ -90,8 +90,24 @@ multiinputapp(uID4, name4, event4, school4)
 # reader("moregoods.txt")
 # readeruID("moregoods.txt")
 # readernames("moregoods.txt")
- readerevents("moregoods.txt")
+# readerevents("moregoods.txt")
 # readercollege("moregoods.txt")
+
+
+eventstuff = readerevents("moregoods.txt")
+ puts eventstuff
+
+
+i = 1
+
+	if someotherstuff[i] == "50m backstroke"
+		puts "They are participating"
+		i += 1
+	end
+
+
+
+
 
 
 
