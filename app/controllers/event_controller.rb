@@ -2,11 +2,6 @@
 #	"Hello World"
 #end
 
-MyApp.get "/events" do
-	@current_page = "Events"
-	erb :"events/events"
-end
-
 MyApp.get "/events/1650freestyle" do
 	@current_page = "Events"
 	erb :"events/1650freestyle"

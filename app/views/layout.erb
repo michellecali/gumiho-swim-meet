@@ -9,10 +9,10 @@
   <h1 class="header">SwimTron</h1>
   <ul class="navlinks">
     <li class="navlinks__listitem <%= "navlinks__listitem--current" if @current_page == "Contestant" %>">
-      <a class="navlinks__link" href="/">Contestant</a>
+      <a class="navlinks__link" href="/entry">Contestant</a>
     </li>
     <li class="navlinks__listitem <%= "navlinks__listitem--current" if @current_page == "Events" %>">
-      <a class="navlinks__link" href="events">Events</a>
+      <span class="navlinks__link">Events</span>
       <ul>
         <li>
           <a class="navlinks__sublink" href="/events/1650freestyle">1650 Freestyle</a>
@@ -53,7 +53,7 @@
       </ul>
     </li>
     <li class="navlinks__listitem <%= "navlinks__listitem--current" if @current_page == "Winners" %>">
-      <a class="navlinks__link" href="/">Winners</a>
+      <a class="navlinks__link" href="/winners">Winners</a>
     </li>
   </ul>
 </nav>
