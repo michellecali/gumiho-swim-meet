@@ -32,28 +32,30 @@ end
 def readeruID(thefilename)
 	goodies = File.open(thefilename, "r")
 	names = goodies.readlines.each_with_index do |line, index|
-		puts line if index%5 == 0
+		puts line if index%4 == 0
 	end
 end
 
 def readernames(thefilename)
 	goodies = File.open(thefilename, "r")
 	events = goodies.readlines.each_with_index do |line, index|
-		puts line if index%5 == 1
+		puts line if index%4 == 1
 	end
 end
 
+# Put a .split(", ") between line if which is four lines below to get array
 def readerevents(thefilename)
 	goodies = File.open(thefilename, "r")
-	college = goodies.readlines.each_with_index do |line, index|
-		puts line if index%5 == 2
+	goodies.readlines.each_with_index do |line, index|
+		puts line if index%4 == 2
 	end
+
 end
 
 def readercollege(thefilename)
 	goodies = File.open(thefilename, "r")
 	college = goodies.readlines.each_with_index do |line, index|
-		puts line if index%5 == 3
+		puts line if index%4 == 3
 	end
 end
 
@@ -88,13 +90,8 @@ multiinputapp(uID4, name4, event4, school4)
 # reader("moregoods.txt")
 # readeruID("moregoods.txt")
 # readernames("moregoods.txt")
-# readerevents("moregoods.txt")
+ readerevents("moregoods.txt")
 # readercollege("moregoods.txt")
-
-puts 0%4
-puts 1%4
-puts 2%4
-puts 3%4
 
 
 

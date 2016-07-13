@@ -1,1 +1,3 @@
-#testing push capabilities
+MyApp.before "/*" do
+	"Hello World"
+end
