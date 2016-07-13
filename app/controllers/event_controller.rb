@@ -48,3 +48,4 @@ end
 
 MyApp.get "events/400medley" do
 	erb :"events/400medley.erb"
+end
