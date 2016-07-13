@@ -1,6 +1,5 @@
-<<<<<<< HEAD
-# gumiho-swim-meet
-=======
+ # gumiho-swim-meet
+ 
 This is a code base for you to start your own project from.
 
 You **will not** be forking this repo. You already have a repo! It's where you've been noting your issues and things. So your goal isn't to create a new repo (which forking would do) but rather to get the files from this repo into your existing repo.
@@ -32,4 +31,3 @@ Your first step should be doing a `git push` so that your GitHub repo is updated
 ---
 
 Remember that `rackup` will run the server. And note that you cannot have two servers running on the same port at the same time; so if you have another site (like the Bechdel application) that is running on port 9292, that'll cause an error.
->>>>>>> bbaf622d03493f8aa45f6c7cd0c5da31706251a0
