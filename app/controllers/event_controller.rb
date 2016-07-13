@@ -1,4 +1,4 @@
-MyApp.get "/results/list" do
-  @bechdel_pass = Result.passing
-  erb :"results/gallery"
+
+MyApp.before "/*" do
+	"Hello World"
 end

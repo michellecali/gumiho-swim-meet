@@ -3,8 +3,9 @@
 # (app) function and, for now, they are used to take moregoods.txt, delete 
 # everything in it, and write/append into.
 
-def multiinputapp(athlete, event, college)
+def multiinputapp(uID, athlete, event, college)
 	newish_file = File.new("moregoods.txt", "a")
+	newish_file.puts uID
 	newish_file.puts athlete 
 	newish_file.puts event
 	newish_file.puts college
@@ -12,8 +13,9 @@ def multiinputapp(athlete, event, college)
 
 end
 
-def multiinputwri(athlete, event, college)
+def multiinputwri(uID, athlete, event, college)
 	newish_file = File.new("moregoods.txt", "w")
+	newish_file.puts uID
 	newish_file.puts athlete 
 	newish_file.puts event
 	newish_file.puts college
@@ -24,33 +26,73 @@ end
 
 def reader(thefilename)
 	goodies = File.open(thefilename, "r")
-	contents = goodies.read
-	puts contents
-
-	
+	puts goodies.read
 end
 
+def readeruID(thefilename)
+	goodies = File.open(thefilename, "r")
+	names = goodies.readlines.each_with_index do |line, index|
+		puts line if index%4 == 0
+	end
+end
+
+def readernames(thefilename)
+	goodies = File.open(thefilename, "r")
+	events = goodies.readlines.each_with_index do |line, index|
+		puts line if index%4 == 1
+	end
+end
+
+# Put a .split(", ") between line if which is four lines below to get array
+def readerevents(thefilename)
+	goodies = File.open(thefilename, "r")
+	goodies.readlines.each_with_index do |line, index|
+		puts line if index%4 == 2
+	end
+
+end
+
+def readercollege(thefilename)
+	goodies = File.open(thefilename, "r")
+	college = goodies.readlines.each_with_index do |line, index|
+		puts line if index%4 == 3
+	end
+end
+
+	
+uID1 = 001 
 name1 = "Billy Bob"
-event1 = "50m fly"
+event1 = "50m fly, 200 breast, 50m backstroke"
 school1 = "Awesome College"
 
+uID2 = 002
 name2 = "Jilly Jones"
-event2 = "200m Back"
+event2 = "200m Back, 100m fly, 50m backstroke"
 school2 = "Brilliant College"
 
+uID3 = 003
+name3 = "Chris Bill"
+event3 = "500 free, 100 breast, 50m backstroke"
+school3 = "Cool School"
 
-multiinputwri(name1, event1, school1)
-multiinputapp(name2, event2, school2)
+uID4 = 004
+name4 = "Cynthia TheSwimmer"
+event4 = "50m backstroke"
+school4 = "Awesome College"
 
-reader("moregoods.txt")
+
+multiinputwri(uID1, name1, event1, school1)
+multiinputapp(uID2, name2, event2, school2)
+multiinputapp(uID3, name3, event3, school3)
+multiinputapp(uID4, name4, event4, school4)
 
 
-puts 1%3
-puts 2%3
-puts 3%3
-puts 4%3
-puts 5%3
-puts 6%3
+# reader("moregoods.txt")
+# readeruID("moregoods.txt")
+# readernames("moregoods.txt")
+ readerevents("moregoods.txt")
+# readercollege("moregoods.txt")
+
 
 
 
