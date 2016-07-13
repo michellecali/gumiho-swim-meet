@@ -44,13 +44,13 @@ nav ul ul {
 	height: 0%;
 	background-color: #eaf9fa;
 	text-overflow: none;
-	box-shadow: 2px 2px 2px #279da5;
 	min-width: 130px;
 	width: 230px;
 	margin-top: 8px;
 	margin-left:-20px;
-	padding: 0;
+	padding: 0 20px;
 	padding: 30px;
+	border-radius: 0 0 20px 20px;
 }
 
 nav ul li:hover > ul {
@@ -75,13 +75,10 @@ nav ul li:hover > ul {
 	width: 250px;
 	text-align: center;
 	border-radius: 20px 20px 0px 0px;
-	box-shadow: 2px 2px 2px #279da5;
 }
 
 .navlinks__listitem:hover{
 	background-color: #eaf9fa;
-	z-index: 5
-	box-shadow: 2px 2px 2px #279da5;
 }
 
 .navlinks__listitem--current{
@@ -96,6 +93,15 @@ nav ul li:hover > ul {
 	color: #289aa4;
 	font-weight: bolder;
 	font-size: 14px;
+}
+
+.navlinks__sublink{
+	text-decoration: none;
+	color: #057b83;
+}
+
+.navlinks__sublink:hover{
+	color: #289aa4;
 }
 
 .content{
