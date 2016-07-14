@@ -38,9 +38,13 @@ end
 
 def readernames(thefilename)
 	goodies = File.open(thefilename, "r")
-	events = goodies.readlines.each_with_index do |line, index|
-		puts line if index%4 == 1
+	names = Array.new
+	goodies.readlines.each_with_index do |line, index|
+		if index%4 == 1
+			names << line
+		end
 	end
+	return names
 end
 
 # Put a .split(", ") between line if which is four lines below to get array
@@ -100,19 +104,20 @@ multiinputapp(uID4, name4, event4, school4)
 
 
 eventstuff = readerevents("moregoods.txt")
-
+namestuff = readernames("moregoods.txt")
 
 i = 0
 
 while i < eventstuff.length
 	if eventstuff[i].any? {|w| w.include? "500 free"}
-		puts "They are in the event"
+		puts(namestuff[i], "is in the event")
 		i+=1
 	else
-		puts "Not participating"
+		puts(namestuff[i], "is not participating")
 		i+=1
 	end
 end
+
 
 
 
