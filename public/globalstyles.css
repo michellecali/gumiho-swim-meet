@@ -134,6 +134,20 @@ nav ul li:hover > ul {
 	color: #279da5;
 }
 
+.competitors__odd{
+	margin-left: -2em;
+	background-color: #fffae6;
+	padding: 0 20px 0 20px;
+	border-radius: 12px;
+}
+
+.competitors__even{
+	margin-left: -2em;
+	background-color: #fff0b3;
+	padding: 0 20px 0 20px;
+	border-radius: 12px;
+}
+
 .entryform{
 	font-family: Tahoma, Verdana, sans-serif;
 	color: #09282a;
@@ -178,7 +192,7 @@ nav ul li:hover > ul {
 	font-size: 16px;
 }
 
-.entryfield__submit{
+.entryform__submit{
 	border: none;
 	width: 250px;
 	background-color: #279da5;
@@ -187,7 +201,7 @@ nav ul li:hover > ul {
 	color: #fff;
 }
 
-.entryfield__submit:hover{
+.entryform__submit:hover{
 	background-color: #6ed8de;
 }
 
