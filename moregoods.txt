@@ -1,2 +1,6 @@
-Cool Person
-Neat College
+2
+Name cool
+College Cool
+2
+Name cool
+College Cool

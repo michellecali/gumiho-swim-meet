@@ -7,6 +7,11 @@
 # contains all information of an athlete when registering. An example of 
 # a set is shown after all the functions are defined.
 
+def joinstrings(str1, str2)
+	newstring = str1 << ", " << str2
+	return newstring
+end
+
 def multiinputapp(uID, athlete, event, college)
 	newish_file = File.new("moregoods.txt", "a")
 	newish_file.puts uID
@@ -92,7 +97,7 @@ school2 = "Brilliant College"
 
 uID3 = 003
 name3 = "Chris Bill"
-event3 = "500 free, 100 breast, 50m backstroke"
+event3 = joinstrings("50m backstroke, 100m fly", "200m fly")
 school3 = "Cool School"
 
 uID4 = 004
@@ -102,7 +107,7 @@ school4 = "Awesome College"
 
 # the below sequence has multiinputwri first so the previous text file 
 # contents is wiped and the above cases are written/appended into the txt.
- 
+
 
 multiinputwri(uID1, name1, event1, school1)
 multiinputapp(uID2, name2, event2, school2)
@@ -134,7 +139,7 @@ namestuff = readernames("moregoods.txt")
 i = 0
 
 while i < eventstuff.length
-	if eventstuff[i].any? {|w| w.include? "500 free"}
+	if eventstuff[i].any? {|w| w.include? "50m backstroke"}
 		puts(namestuff[i], "is in the event")
 		i+=1
 	else
@@ -144,9 +149,10 @@ while i < eventstuff.length
 end
 
 
-
-
-
+def joinstrings(str1, str2)
+	newstring = str1 << ", " << str2
+	return newstring
+end
 
 
 
