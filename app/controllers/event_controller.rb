@@ -137,3 +137,9 @@ MyApp.get "/events/400medley" do
 	@current_page = "400 Individual Medley"
 	erb :"events/400medley"
 end
+
+MyApp.post "event/times/<%= @current_page %>" do
+	#some code for event time data
+end
+
+	
