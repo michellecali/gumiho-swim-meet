@@ -1,8 +1,20 @@
-2
-Mario
-200 Freestyle, 1650 Freestyle, 50 Freestyle, 100 Butterfly
-64
-2
-Mario
-200 Freestyle, 1650 Freestyle, 50 Freestyle, 100 Butterfly
-64
+pay no attention to me
+Athlete A
+1650 Freestyle, 200 Butterfly, 200 Breaststroke
+College A
+pay no attention to me
+Athlete B
+1650 Freestyle, 100 Butterfly
+College B
+pay no attention to me
+Athlete C
+1650 Freestyle
+College B (on purpose)
+pay no attention to me
+Athlete D
+100 Freestyle, 500 Freestyle
+New College
+pay no attention to me
+Athlete E
+1650 Freestyle
+E College

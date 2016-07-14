@@ -131,19 +131,9 @@ end
 
 
 # Other used functions below.
-def idGeneration(competitorID, submit)
-	#need to set competitorID to retrieve previous from storage (if it exists)
-	#need to set submit to boolean when form submits
-	if submit == "submit"
-		if competitorID == nil 
-			competitorID = 0
-		else 
-			competitorID = competitorID +=1
-		end
-	end
-end
 
-uID = idGeneration(1, "submit")
+
+uID = "pay no attention to me"
 
 def multiinputapp(uID, athlete, event, college)
 	newish_file = File.new("entrants.txt", "a")
@@ -171,7 +161,6 @@ end
 # txt file and write/append to it. The final product should have logic where
 # if the swim meet admin is just submitting their first entrant, the wri func
 # is used. For all the other applicants the app is used.
-multiinputwri(uID,name, eventstring, college)
 multiinputapp(uID,name, eventstring, college)
 
 # Sends admin back to the entryform page

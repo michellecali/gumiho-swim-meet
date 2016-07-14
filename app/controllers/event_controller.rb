@@ -2,8 +2,84 @@
 #	"Hello World"
 #end
 
+def readernames(thefilename)
+	goodies = File.open(thefilename, "r")
+	names = Array.new
+	goodies.readlines.each_with_index do |line, index|
+		if index%4 == 1
+			names << line
+		end
+	end
+	return names
+end
+
+
+def readerevents(thefilename)
+	goodies = File.open(thefilename, "r")
+	events = Array.new
+	goodies.readlines.each_with_index do |line, index|
+		if index%4 ==2
+			events << line.split(", ")
+		end
+
+	end
+	return events
+
+end
+
+def readercollege(thefilename)
+	goodies = File.open(thefilename, "r")
+	collegenames = Array.new
+	goodies.readlines.each_with_index do |line, index|
+		if index%4 == 3
+			collegenames << line
+		end
+	end
+
+	return collegenames
+end
+
+def peopleinevent(eventname, txtfile)
+	eventstuff = readerevents(txtfile)
+	namestuff = readernames(txtfile)
+
+	i = 0
+
+	participants = Array.new
+	while i < eventstuff.length
+		if eventstuff[i].any? {|w| w.include? eventname}
+			participants << namestuff[i]
+			i+=1
+		else
+			i+=1
+		end
+	end
+	return participants	
+end
+
+def collegeofperson(eventname, txtfile)
+	eventstuff = readerevents(txtfile)
+	collegestuff = readercollege(txtfile)
+
+	i = 0
+
+	thecolleges = Array.new
+	while i < eventstuff.length
+		if eventstuff[i].any? {|w| w.include? eventname}
+			thecolleges << collegestuff[i]
+			i+=1
+		else
+			i+=1
+		end
+	end
+	return thecolleges
+end
+
 MyApp.get "/events/1650freestyle" do
 	@current_page = "1650 Freestyle"
+
+	@peoplein1650F = peopleinevent(@current_page, "entrants.txt")
+	@colleges1650F = collegeofperson(@current_page, "entrants.txt")
 	erb :"events/1650freestyle"
 end
 

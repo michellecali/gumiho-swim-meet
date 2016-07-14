@@ -77,9 +77,13 @@ end
 
 def readercollege(thefilename)
 	goodies = File.open(thefilename, "r")
-	college = goodies.readlines.each_with_index do |line, index|
-		puts line if index%4 == 3
+	collegenames = Array.new
+	goodies.readlines.each_with_index do |line, index|
+		if index%4 == 3
+			collegenames << line
+		end
 	end
+	return collegenames
 	# no need for split here. Its one name per line.
 end
 
@@ -119,8 +123,8 @@ multiinputapp(uID4, name4, event4, school4)
 
 # reader("moregoods.txt")
 # readeruID("moregoods.txt")
-# readernames("moregoods.txt")
-# readerevents("moregoods.txt")
+puts readernames("moregoods.txt")
+puts readerevents("moregoods.txt")
 # readercollege("moregoods.txt")
 
 
@@ -133,26 +137,29 @@ multiinputapp(uID4, name4, event4, school4)
 # strategy. The same index used to match the event is also the same index for
 # the athlete name. 
 
-eventstuff = readerevents("moregoods.txt")
-namestuff = readernames("moregoods.txt")
 
-i = 0
 
-while i < eventstuff.length
-	if eventstuff[i].any? {|w| w.include? "50m backstroke"}
-		puts(namestuff[i], "is in the event")
-		i+=1
-	else
-		puts(namestuff[i], "is not participating")
-		i+=1
+def peopleinevent(eventname, txtfile)
+	eventstuff = readerevents(txtfile)
+	namestuff = readernames(txtfile)
+
+	i = 0
+
+	participants = Array.new
+	while i < eventstuff.length
+		if eventstuff[i].any? {|w| w.include? eventname}
+			participants << namestuff[i]
+			i+=1
+		else
+			i+=1
+		end
 	end
+	return participants	
 end
 
 
-def joinstrings(str1, str2)
-	newstring = str1 << ", " << str2
-	return newstring
-end
+folks = peopleinevent("100m fly", "moregoods.txt")
+puts folks
 
 
 
