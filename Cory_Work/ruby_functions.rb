@@ -46,9 +46,14 @@ end
 # Put a .split(", ") between line if which is four lines below to get array
 def readerevents(thefilename)
 	goodies = File.open(thefilename, "r")
+	swim_events = Array.new
 	goodies.readlines.each_with_index do |line, index|
-		puts line.split(", ") if index%4 == 2
+		if index%4 ==2
+			swim_events << line.split(", ")
+		end
+		# puts line.split(", ") if index%4 == 2
 	end
+	return swim_events
 
 end
 
@@ -95,15 +100,21 @@ multiinputapp(uID4, name4, event4, school4)
 
 
 eventstuff = readerevents("moregoods.txt")
- puts eventstuff
 
 
-i = 1
+i = 0
 
-	if someotherstuff[i] == "50m backstroke"
-		puts "They are participating"
-		i += 1
+while i < eventstuff.length
+	if eventstuff[i].any? {|w| w.include? "500 free"}
+		puts "They are in the event"
+		i+=1
+	else
+		puts "Not participating"
+		i+=1
 	end
+end
+
+
 
 
 
