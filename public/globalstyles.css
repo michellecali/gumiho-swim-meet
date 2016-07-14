@@ -116,7 +116,6 @@ nav ul li:hover > ul {
 	padding: 20px 80px 50px 80px;
 	z-index: 3;
 	box-shadow: 2px 2px 2px #279da5;
-	min-width: 500px;
 }
 
 .l-content{
@@ -144,33 +143,52 @@ nav ul li:hover > ul {
 	align-items: stretch;
 }
 
-.competitors__odd{
-	margin-left: -2em;
-	background-color: #fffae6;
-	padding: 5px 20px 5px 20px;
+.competitors__listitem{
+	margin-left: -3em;
+	padding: 0px 20px 0px 20px;
 	border-radius: 12px;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
 }
 
-.competitors__even{
-	margin-left: -2em;
+.competitors__listitem--even{
 	background-color: #fff0b3;
-	padding: 5px 20px 5px 20px;
-	border-radius: 12px;
+}
+
+.competitors__listitem--odd{
+	background-color: #fffae6;
+}
+
+.competitors__name{
+	min-width: 80px;
+	text-overflow: ellipsis;
 }
 
 .competitors__textfield{
 	background-color: transparent;
 	border: none;
 	padding: 10px 10px 10px 0px;
-	font-size: 18px;
+	font-size: 14px;
 	width: 50px;
 	text-align: right;
+}
+
+.competitors__time{
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.l-right{
+	align-self: flex-end;
 }
 
 .entryform{
 	font-family: Tahoma, Verdana, sans-serif;
 	color: #09282a;
-	font-size: 18px;
+	font-size: 14px;
+	display: flex;
+	flex-flow: column nowrap;
 }
 
 .entryform__label{
@@ -187,28 +205,28 @@ nav ul li:hover > ul {
     vertical-align: 2px;
     background-color: transparent;
     border-bottom: 2px solid #09282a;
-    font-size: 18px;
+    font-size: 14px;
     color: #09282a;
 }
 
 .entryform__textfield::-webkit-input-placeholder{
 	color: #AAA;
-	font-size: 16px;
+	font-size: 14px;
 }
 
 .entryform__textfield::-moz-placeholder{
 	color: #AAA;
-	font-size: 18px;
+	font-size: 14px;
 }
 
 .entryform__textfield:-ms-input-placeholder{
 	color: #AAA;
-	font-size: 16px;
+	font-size: 14px;
 }
 
 .entryform__textfield:-moz-placeholder{
 	color: #AAA;
-	font-size: 16px;
+	font-size: 14px;
 }
 
 .entryform__submit{
