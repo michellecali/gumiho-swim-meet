@@ -113,10 +113,14 @@ nav ul li:hover > ul {
 	background-color: #FFF;
 	border-radius: 20px;
 	margin-top: -1em;
-	padding: 20px;
+	padding: 20px 80px 50px 80px;
 	z-index: 3;
 	box-shadow: 2px 2px 2px #279da5;
 	min-width: 500px;
+}
+
+.l-content{
+	align-items: stretch;
 }
 
 .content__header{
@@ -134,18 +138,33 @@ nav ul li:hover > ul {
 	color: #279da5;
 }
 
+.competitors_list{
+	display: flex;
+	flex-flow: column;
+	align-items: stretch;
+}
+
 .competitors__odd{
 	margin-left: -2em;
 	background-color: #fffae6;
-	padding: 0 20px 0 20px;
+	padding: 5px 20px 5px 20px;
 	border-radius: 12px;
 }
 
 .competitors__even{
 	margin-left: -2em;
 	background-color: #fff0b3;
-	padding: 0 20px 0 20px;
+	padding: 5px 20px 5px 20px;
 	border-radius: 12px;
+}
+
+.competitors__textfield{
+	background-color: transparent;
+	border: none;
+	padding: 10px 10px 10px 0px;
+	font-size: 18px;
+	width: 50px;
+	text-align: right;
 }
 
 .entryform{
@@ -208,9 +227,5 @@ nav ul li:hover > ul {
 .entryform__list{
 	list-style: none;
 }
-
-
-
-
 
 

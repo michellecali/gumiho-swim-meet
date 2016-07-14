@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 2
 Name cool
 College Cool
 2
 Name cool
 College Cool
+=======
+Name
+asdfasdfasdfsdfsdfsdf
+>>>>>>> 528f24e192316076b5895e688c26ad3ec737eaeb
