@@ -1,7 +1,9 @@
 <div class="content  l-content">
 	<h1 class="content__header">200 Butterfly</h1>
-	<form class="entryform" method="post">
+	<form class="entryform" method="post" action="/event/times">
+
 	<input type="hidden" name="event" value="200 Butterfly">
+
 		<ol class="competitors__list">
 			
 			<% i = 0
@@ -11,7 +13,7 @@
 			<li class="competitors__listitem competitors__listitem--odd">
 				<p class="competitors__name"><%= @peoplein200BU[i]  %></p><p class="competitors__name"><%= @colleges200BU[i] %></p>
 				<div class="competitors__time">
-					<input class="competitors__textfield" type="text" name="UIDtime" placeholder="time"> 
+					<input class="competitors__textfield" type="text" name="<%= @iDs200BU[i]%>" placeholder="time"> 
 					<p>sec.</p>
 				</div>
 			</li>

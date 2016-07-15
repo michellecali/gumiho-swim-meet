@@ -109,6 +109,7 @@ MyApp.get "/events/1650freestyle" do
 
 	@peoplein1650F = peopleinevent("1650 Freestyle", "entrants.txt")
 	@colleges1650F = collegeofperson("1650 Freestyle", "entrants.txt")
+	@iDs1650F = iDofperson("1650 Freestyle", "entrants.txt")
 	erb :"events/1650freestyle"
 end
 
@@ -117,6 +118,7 @@ MyApp.get "/events/200butterfly" do
 
 	@peoplein200BU = peopleinevent("200 Butterfly", "entrants.txt")
 	@colleges200BU = collegeofperson("200 Butterfly", "entrants.txt")
+	@iDs200BU = iDofperson("200 Butterfly", "entrants.txt")
 	erb :"events/200butterfly"
 end
 
@@ -125,6 +127,7 @@ MyApp.get "/events/200freestyle" do
 
 	@peoplein200FR = peopleinevent("200 Freestyle", "entrants.txt")
 	@colleges200FR = collegeofperson("200 Freestyle", "entrants.txt")
+	@iDs200FR = iDofperson("200 Freestyle", "entrants.txt")
 	erb :"events/200freestyle"
 end
 
@@ -142,6 +145,7 @@ MyApp.get "/events/100breaststroke" do
 
 	@peoplein100BR = peopleinevent("100 Breaststroke", "entrants.txt")
 	@colleges100BR = collegeofperson("100 Breaststroke", "entrants.txt")
+	@iDs100BR = iDofperson("100 Breaststroke", "entrants.txt")
 	erb :"events/100breaststroke"
 end
 
@@ -150,6 +154,7 @@ MyApp.get "/events/50freestyle" do
 
 	@peoplein50FRE = peopleinevent("50 Freestyle", "entrants.txt")
 	@colleges50FRE = collegeofperson("50 Freestyle", "entrants.txt")
+	@iDs50FRE = iDofperson("50 Freestyle", "entrants.txt")
 	erb :"events/50freestyle"
 end
 
@@ -158,6 +163,7 @@ MyApp.get "/events/100freestyle" do
 
 	@peoplein100FR = peopleinevent("100 Freestyle", "entrants.txt")
 	@colleges100FR = collegeofperson("100 Freestyle", "entrants.txt")
+	@iDs100FR = iDofperson("100 Freestyle", "entrants.txt")
 	erb :"events/100freestyle"
 end
 
@@ -166,6 +172,7 @@ MyApp.get "/events/200backstroke" do
 
 	@peoplein200BA = peopleinevent("200 Backstroke", "entrants.txt")
 	@colleges200BA = collegeofperson("200 Backstroke", "entrants.txt")
+	@iDs200BA = iDofperson("200 Backstroke", "entrants.txt")
 	erb :"events/200backstroke"
 end
 
@@ -174,6 +181,7 @@ MyApp.get "/events/200breaststroke" do
 
 	@peoplein200BR = peopleinevent("200 Breaststroke", "entrants.txt")
 	@colleges200BR = collegeofperson("200 Breaststroke", "entrants.txt")
+	@iDs200BR = iDofperson("200 Breaststroke", "entrants.txt")
 	erb :"events/200breaststroke"
 end
 
@@ -182,6 +190,7 @@ MyApp.get "/events/500freestyle" do
 
 	@peoplein500FR = peopleinevent("500 Freestyle", "entrants.txt")
 	@colleges500FR = collegeofperson("500 Freestyle", "entrants.txt")
+	@iDs500FR = iDofperson("500 Freestyle", "entrants.txt")
 	erb :"events/500freestyle"
 end
 
@@ -190,6 +199,7 @@ MyApp.get "/events/100butterfly" do
 
 	@peoplein100BU = peopleinevent("100 Butterfly", "entrants.txt")
 	@colleges100BU = collegeofperson("100 Butterfly", "entrants.txt")
+	@iDs100BU = iDofperson("100 Butterfly", "entrants.txt")
 	erb :"events/100butterfly"
 end
 
@@ -198,6 +208,7 @@ MyApp.get "/events/400medley" do
 
 	@peoplein400IM = peopleinevent("400 Individual Medley", "entrants.txt")
 	@colleges400IM = collegeofperson("400 Individual Medley", "entrants.txt")
+	@iDs400IM = iDofperson("400 Individual Medley", "entrants.txt")
 	erb :"events/400medley"
 end
 
