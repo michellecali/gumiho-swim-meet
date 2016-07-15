@@ -3,11 +3,13 @@ def idGeneration(competitorID, submit)
 	#need to set submit to boolean when form submits
 	if submit == true
 		if competitorID == nil 
-			competitorID = 0
+			competitorID = 1
 		else 
 			competitorID = competitorID +=1
 		end
 	end
 end
 
-puts idGeneration(nil, true)
+#this is code I was using to test locally
+# puts idGeneration(nil, true)
+
