@@ -10,6 +10,7 @@ def readeruID(thefilename)
   end
 
   return allUIDs
+
 end
 
 #idGeneration generates the next ID number based on the state of entrants.txt
@@ -131,7 +132,7 @@ end
 # Other used functions below.
 def multiinputapp(uID, athlete, event, college)
   newish_file = File.new("entrants.txt", "a")
-  newish_file.puts uID
+  newish_file.puts uID 
   newish_file.puts athlete 
   newish_file.puts event
   newish_file.puts college
