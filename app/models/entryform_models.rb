@@ -1,16 +1,25 @@
-def idGeneration(competitorID, submit)
-	#need to set competitorID to retrieve previous from storage (if it exists)
-	#need to set submit to boolean when form submits
-	if submit == true
-		if competitorID == nil 
-			competitorID = 0
-		else 
-			competitorID = competitorID +=1
-		end
-	end
+# Loops through contents of the file, seeking only the UID.
+# 
+# Returns an Array containing all of the UIDs.
+def readeruID(thefilename)
+  allUIDs = []
+
+  goodies = File.open(thefilename, "r")
+  goodies.readlines.each_with_index do |line, index|
+    (allUIDs << line) if (index % 4 == 0)
+  end
+
+  return allUIDs
 end
 
-puts idGeneration(nil, true)
+def idGeneration
+  previousCompetitorId = readeruID("entrants.txt").length
+
+	#need to set competitorID to retrieve previous from storage (if it exists)
+	competitorID = previousCompetitorId + 1
+
+  return competitorID
+end
 
 # Functions below are used below to either combine or save a new string.
 def joinstrings(str1, str2)

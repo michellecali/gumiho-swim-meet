@@ -31,7 +31,7 @@ MyApp.post "/swimmers/new" do
 	# String containing all of the contestant's registered events.
 	eventstring = checkIfInEvent(stuffs1650F, stuffs200FR, stuffs100BA, stuffs100BR, stuffs200BU, stuffs50FRE, stuffs100FR, stuffs200BA, stuffs200BR, stuffs500FR, stuffs100BU, stuffs400IM)
 
-	uID = "pay no attention to me"
+	uID = idGeneration
 
 	# This is where all the action happens! As these are right now, the wri and 
 	# app combination are meant to first remove already existing contents in the 

@@ -38,12 +38,7 @@ def reader(thefilename)
 	puts goodies.read
 end
 
-def readeruID(thefilename)
-	goodies = File.open(thefilename, "r")
-	names = goodies.readlines.each_with_index do |line, index|
-		puts line if index%4 == 0
-	end
-end
+
 
 def readernames(thefilename)
 	goodies = File.open(thefilename, "r")
