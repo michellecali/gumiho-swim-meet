@@ -12,16 +12,6 @@ MyApp.post "/swimmers/new" do
 name = params['Name']
 college = params['College']
 
-# Functions below are used below to either combine or save a new string.
-def joinstrings(str1, str2)
-	newstring = str1 << ", " << str2
-	return newstring
-end
-def newstring(str1)
-	newstring = str1
-	return newstring
-end
-
 # Fetching all possible params for all events. If statements below will check
 # if there is indeed a "on" ("on" is what the html checklist does if it was
 # checked) for each event ID.
