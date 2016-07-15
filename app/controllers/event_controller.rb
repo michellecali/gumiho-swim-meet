@@ -83,58 +83,91 @@ MyApp.get "/events/1650freestyle" do
 	erb :"events/1650freestyle"
 end
 
+MyApp.get "/events/200butterfly" do
+	@current_page = "200 Butterfly"
+
+	@peoplein100BU = peopleinevent(@current_page, "entrants.txt")
+	@colleges100BU = collegeofperson(@currentpage, "entrants.txt")
+	erb :"events/200butterfly"
+end
+
 MyApp.get "/events/200freestyle" do
 	@current_page = "200 Freestyle"
+
+	@peoplein200FR = peopleinevent(@current_page, "entrants.txt")
+	@colleges200FR = collegeofperson(@currentpage, "entrants.txt")
 	erb :"events/200freestyle"
 end
 
 MyApp.get "/events/100backstroke" do
 	@current_page = "100 Backstroke"
+
+	@peoplein100BA = peopleinevent(@current_page, "entrants.txt")
+	@colleges100BA = collegeofperson(@currentpage, "entrants.txt")
 	erb :"events/100backstroke"
 end
 
 MyApp.get "/events/100breaststroke" do
 	@current_page = "100 Breaststroke"
-	erb :"events/100breaststroke"
-end
 
-MyApp.get "/events/200butterfly" do
-	@current_page = "200 Butterfly"
-	erb :"events/200butterfly"
+	@peoplein100BR = peopleinevent(@current_page, "entrants.txt")
+	@colleges100BR = collegeofperson(@currentpage, "entrants.txt")
+	erb :"events/100breaststroke"
 end
 
 MyApp.get "/events/50freestyle" do
 	@current_page = "50 Freestyle"
+
+	@peoplein50FRE = peopleinevent(@current_page, "entrants.txt")
+	@colleges50FRE = collegeofperson(@currentpage, "entrants.txt")
 	erb :"events/50freestyle"
 end
 
 MyApp.get "/events/100freestyle" do
 	@current_page = "100 Freestyle"
+
+	@peoplein100FR = peopleinevent(@current_page, "entrants.txt")
+	@colleges100FR = collegeofperson(@currentpage, "entrants.txt")
 	erb :"events/100freestyle"
 end
 
 MyApp.get "/events/200backstroke" do
 	@current_page = "200 Backstroke"
+
+	@peoplein200BA = peopleinevent(@current_page, "entrants.txt")
+	@colleges200BA = collegeofperson(@currentpage, "entrants.txt")
 	erb :"events/200backstroke"
 end
 
 MyApp.get "/events/200breaststroke" do
 	@current_page = "200 Breaststroke"
+
+	@peoplein200BR = peopleinevent(@current_page, "entrants.txt")
+	@colleges200BR = collegeofperson(@currentpage, "entrants.txt")
 	erb :"events/200breaststroke"
 end
 
 MyApp.get "/events/500freestyle" do
 	@current_page = "500 Freestyle"
+
+	@peoplein500FR = peopleinevent(@current_page, "entrants.txt")
+	@colleges500FR = collegeofperson(@currentpage, "entrants.txt")
 	erb :"events/500freestyle"
 end
 
 MyApp.get "/events/100butterfly" do
 	@current_page = "100 Butterfly"
+
+	@peoplein100BU = peopleinevent(@current_page, "entrants.txt")
+	@colleges100BU = collegeofperson(@currentpage, "entrants.txt")
 	erb :"events/100butterfly"
 end
 
 MyApp.get "/events/400medley" do
 	@current_page = "400 Individual Medley"
+
+	@peoplein400IM = peopleinevent(@current_page, "entrants.txt")
+	@colleges400IM = collegeofperson(@currentpage, "entrants.txt")
 	erb :"events/400medley"
 end
 

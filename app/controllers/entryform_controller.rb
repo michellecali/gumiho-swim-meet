@@ -60,9 +60,9 @@ if stuffs200FR == "on"
 end
 if stuffs100BA == "on"
 	if eventstring.empty? == true
-		eventstring = newstring("1650 Freestyle")
+		eventstring = newstring("100 Backstroke")
 	else
-		eventstring = joinstrings(eventstring, "1650 Freestyle")
+		eventstring = joinstrings(eventstring, "100 Backstroke")
 	end
 end
 if stuffs100BR == "on"
