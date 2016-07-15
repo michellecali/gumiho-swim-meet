@@ -149,3 +149,17 @@ def multiinputwri(uID, athlete, event, college)
   newish_file.close
 
 end
+
+
+def writetotimes(str)
+  newish_file = File.new("times.txt", "a")
+  newish_file.puts str
+  newish_file.close
+end
+
+
+
+
+
+
+
