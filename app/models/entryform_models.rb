@@ -116,3 +116,25 @@ def checkIfInEvent(stuffs1650F, stuffs200FR, stuffs100BA, stuffs100BR, stuffs200
 
   return eventstring
 end
+
+# Other used functions below.
+def multiinputapp(uID, athlete, event, college)
+  newish_file = File.new("entrants.txt", "a")
+  newish_file.puts uID
+  newish_file.puts athlete 
+  newish_file.puts event
+  newish_file.puts college
+  newish_file.close
+
+
+end
+
+def multiinputwri(uID, athlete, event, college)
+  newish_file = File.new("entrants.txt", "w")
+  newish_file.puts uID
+  newish_file.puts athlete 
+  newish_file.puts event
+  newish_file.puts college
+  newish_file.close
+
+end
