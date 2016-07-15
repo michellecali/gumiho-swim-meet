@@ -12,6 +12,8 @@ def readeruID(thefilename)
   return allUIDs
 end
 
+#idGeneration generates the next ID number based on the state of entrants.txt
+#returns integer competitorID
 def idGeneration
   previousCompetitorId = readeruID("entrants.txt").length
 

@@ -2,6 +2,17 @@
 #	"Hello World"
 #end
 
+def readerIDs(thefilename)
+	goodies = File.open(thefilename, "r")
+	iDs = Array.new
+	goodies.readlines.each_with_index do |line, index|
+		if index%4 == 0
+			iDs << line
+		end
+	end
+	return iDs
+end
+
 def readernames(thefilename)
 	goodies = File.open(thefilename, "r")
 	names = Array.new
@@ -75,6 +86,24 @@ def collegeofperson(eventname, txtfile)
 	return thecolleges
 end
 
+def iDofperson(eventname, txtfile)
+	eventstuff = readerevents(txtfile)
+	iDstuff = readerIDs(txtfile)
+
+	i = 0
+
+	theiDs = Array.new
+	while i < eventstuff.length
+		if eventstuff[i].any? {|w| w.include? eventname}
+			theiDs << iDstuff[i]
+			i+=1
+		else
+			i+=1
+		end
+	end
+	return theiDs
+end
+
 MyApp.get "/events/1650freestyle" do
 	@current_page = "1650 Freestyle"
 
@@ -104,6 +133,7 @@ MyApp.get "/events/100backstroke" do
 
 	@peoplein100BA = peopleinevent("100 Backstroke", "entrants.txt")
 	@colleges100BA = collegeofperson("100 Backstroke", "entrants.txt")
+	@iDs100BA = iDofperson("100 Backstroke", "entrants.txt")
 	erb :"events/100backstroke"
 end
 
@@ -171,8 +201,8 @@ MyApp.get "/events/400medley" do
 	erb :"events/400medley"
 end
 
-MyApp.post "event/times/<%= @current_page %>" do
-	#some code for event time data
+MyApp.post "/event/times" do
+	binding.pry
 end
 
 	
