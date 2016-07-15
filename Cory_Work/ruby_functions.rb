@@ -7,6 +7,11 @@
 # contains all information of an athlete when registering. An example of 
 # a set is shown after all the functions are defined.
 
+def joinstrings(str1, str2)
+	newstring = str1 << ", " << str2
+	return newstring
+end
+
 def multiinputapp(uID, athlete, event, college)
 	newish_file = File.new("moregoods.txt", "a")
 	newish_file.puts uID
@@ -33,12 +38,7 @@ def reader(thefilename)
 	puts goodies.read
 end
 
-def readeruID(thefilename)
-	goodies = File.open(thefilename, "r")
-	names = goodies.readlines.each_with_index do |line, index|
-		puts line if index%4 == 0
-	end
-end
+
 
 def readernames(thefilename)
 	goodies = File.open(thefilename, "r")
@@ -72,9 +72,13 @@ end
 
 def readercollege(thefilename)
 	goodies = File.open(thefilename, "r")
-	college = goodies.readlines.each_with_index do |line, index|
-		puts line if index%4 == 3
+	collegenames = Array.new
+	goodies.readlines.each_with_index do |line, index|
+		if index%4 == 3
+			collegenames << line
+		end
 	end
+	return collegenames
 	# no need for split here. Its one name per line.
 end
 
@@ -92,7 +96,7 @@ school2 = "Brilliant College"
 
 uID3 = 003
 name3 = "Chris Bill"
-event3 = "500 free, 100 breast, 50m backstroke"
+event3 = joinstrings("50m backstroke, 100m fly", "200m fly")
 school3 = "Cool School"
 
 uID4 = 004
@@ -102,7 +106,7 @@ school4 = "Awesome College"
 
 # the below sequence has multiinputwri first so the previous text file 
 # contents is wiped and the above cases are written/appended into the txt.
- 
+
 
 multiinputwri(uID1, name1, event1, school1)
 multiinputapp(uID2, name2, event2, school2)
@@ -114,8 +118,8 @@ multiinputapp(uID4, name4, event4, school4)
 
 # reader("moregoods.txt")
 # readeruID("moregoods.txt")
-# readernames("moregoods.txt")
-# readerevents("moregoods.txt")
+puts readernames("moregoods.txt")
+puts readerevents("moregoods.txt")
 # readercollege("moregoods.txt")
 
 
@@ -128,25 +132,29 @@ multiinputapp(uID4, name4, event4, school4)
 # strategy. The same index used to match the event is also the same index for
 # the athlete name. 
 
-eventstuff = readerevents("moregoods.txt")
-namestuff = readernames("moregoods.txt")
 
-i = 0
 
-while i < eventstuff.length
-	if eventstuff[i].any? {|w| w.include? "500 free"}
-		puts(namestuff[i], "is in the event")
-		i+=1
-	else
-		puts(namestuff[i], "is not participating")
-		i+=1
+def peopleinevent(eventname, txtfile)
+	eventstuff = readerevents(txtfile)
+	namestuff = readernames(txtfile)
+
+	i = 0
+
+	participants = Array.new
+	while i < eventstuff.length
+		if eventstuff[i].any? {|w| w.include? eventname}
+			participants << namestuff[i]
+			i+=1
+		else
+			i+=1
+		end
 	end
+	return participants	
 end
 
 
-
-
-
+folks = peopleinevent("100m fly", "moregoods.txt")
+puts folks
 
 
 

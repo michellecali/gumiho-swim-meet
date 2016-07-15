@@ -1,27 +1,25 @@
-<div class="content">
+<div class="content  l-content">
 	<h1 class="content__header">200 Backstroke</h1>
-	<form class="entryform">
-		<ol class="entryform__list">
-			<li class="competitors__odd">
-				<label class="">NAME - COLLEGE - </label>
-				<input class="entryform__textfield" type="text" name="UIDtime" placeholder="Time">
+	<form class="entryform" method="post">
+		<ol class="competitors__list">
+			
+			<% i = 0
+			while i < @peoplein200BA.length %>
+
+
+			<li class="competitors__listitem competitors__listitem--odd">
+				<p class="competitors__name"><%= @peoplein200BA[i]  %></p><p class="competitors__name"><%= @colleges200BA[i] %></p>
+				<div class="competitors__time">
+					<input class="competitors__textfield" type="text" name="UIDtime" placeholder="time"> 
+					<p>sec.</p>
+				</div>
 			</li>
-			<li class="competitors__even">
-				NAME - COLLEGE - <input class="entryform__textfield" type="text" name="UIDtime" placeholder="Time">
-			</li>
-			<li class="competitors__odd">
-				NAME - COLLEGE - <input class="entryform__textfield" type="text" name="UIDtime" placeholder="Time">
-			</li>
-			<li class="competitors__even">
-				NAME - COLLEGE - <input class="entryform__textfield" type="text" name="UIDtime" placeholder="Time">
-			</li>
-			<li class="competitors__odd">
-				NAME - COLLEGE - <input class="entryform__textfield" type="text" name="UIDtime" placeholder="Time">
-			</li>
-			<li class="competitors__even">
-				NAME - COLLEGE - <input class="entryform__textfield" type="text" name="UIDtime" placeholder="Time">
-			</li>
+
+			<% i+=1
+			end %>
+
+
 		</ol>
-		<input class="entryform__submit" type="submit" name="Submit">
+		<input class="entryform__submit l-right" type="submit" name="Submit">
 	</form>
 </div>
