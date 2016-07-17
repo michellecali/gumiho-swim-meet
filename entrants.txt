@@ -66,3 +66,7 @@ UNO
 Dude A
 1650 Freestyle, 100 Breaststroke
 College Awesome
+18
+Name cool
+200 Freestyle, 100 Backstroke, 200 Butterfly, 200 Breaststroke, 100 Butterfly
+Cool college
