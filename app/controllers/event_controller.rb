@@ -214,15 +214,22 @@ end
 
 MyApp.post "/event/times" do
 
-	event = params['event']
-	# Had to use double quotes below to make line breaks not an issue.
-	theiDtime = params["14\r\n-time"]
-	# TODO - Investigate what happens if two swimmers have the same time.
-	x = params.key(theiDtime)
-	theiD = x.chomp("\r\n-time")
+	times = []
+	params.keys.each do |key|
+		if key.include? "-time" 
+			times << {key => params[key]} 
+		end
+	end 
 
-	str1 = event + "," + theiDtime + "," + theiD
-	writetotimes(str1)
+	times.each do |time|
+		event = params['event']
+		# Had to use double quotes below to make line breaks not an issue.
+		theiDtime = time.
+		# TODO - Investigate what happens if two swimmers have the same time.
+		x = params.key(theiDtime)
+		theiD = x.chomp("\r\n-time")
 
-end
+		str1 = event + "," + theiDtime + "," + theiD
+		writetotimes(str1)
+	end
 # {"event"=>"100 Backstroke", "14\r\n-time"=>"5", "16\r\n-time"=>"10", "Submit"=>"Submit"}	
