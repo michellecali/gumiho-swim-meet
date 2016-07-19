@@ -221,15 +221,33 @@ MyApp.post "/event/times" do
 		end
 	end 
 
-	times.each do |time|
-		event = params['event']
-		# Had to use double quotes below to make line breaks not an issue.
-		theiDtime = time.
-		# TODO - Investigate what happens if two swimmers have the same time.
-		x = params.key(theiDtime)
-		theiD = x.chomp("\r\n-time")
 
-		str1 = event + "," + theiDtime + "," + theiD
-		writetotimes(str1)
+	str1 = ""
+	event = params['event']
+	times.each do |time|
+
+		# Had to use double quotes below to make line breaks not an issue.
+		theiD = time.keys # each run will make theiD equal the key (from times) of the loop
+		theiDtime = time[theiD[0]] #getting the time from the key
+		theiD = theiD[0].chomp("\r\n-time") #makes the key the number
+
+		str1 << (theiD << "," << theiDtime << ",") #throws all the strings together each loop	
 	end
-# {"event"=>"100 Backstroke", "14\r\n-time"=>"5", "16\r\n-time"=>"10", "Submit"=>"Submit"}	
+# puts (event << ("," << str1.chop))
+writetotimes(event << ("," << str1.chop))
+	erb :"home"
+end
+
+# params = {"event"=>"100 Backstroke", "14\r\n-time"=>"5", "16\r\n-time"=>"10", "Submit"=>"Submit"}	
+
+
+
+
+
+
+
+
+
+
+
+
