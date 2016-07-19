@@ -214,6 +214,8 @@ end
 
 MyApp.post "/event/times" do
 
+# params = {"event"=>"100 Backstroke", "14\r\n-time"=>"5", "16\r\n-time"=>"10", "Submit"=>"Submit"}	
+
 	times = []
 	params.keys.each do |key|
 		if key.include? "-time" 
@@ -221,24 +223,27 @@ MyApp.post "/event/times" do
 		end
 	end 
 
-
 	str1 = ""
 	event = params['event']
 	times.each do |time|
 
 		# Had to use double quotes below to make line breaks not an issue.
 		theiD = time.keys # each run will make theiD equal the key (from times) of the loop
+
 		theiDtime = time[theiD[0]] #getting the time from the key
+
 		theiD = theiD[0].chomp("\r\n-time") #makes the key the number
 
-		str1 << (theiD << "," << theiDtime << ",") #throws all the strings together each loop	
+		str1 << (theiD << "," << theiDtime << ",") #throws all the strings together each loop
 	end
-# puts (event << ("," << str1.chop))
-writetotimes(event << ("," << str1.chop))
-	erb :"home"
+	str2 = event << "," << str1.chop
+
+
+	writetotimes(str2)
+erb :"home"
 end
 
-# params = {"event"=>"100 Backstroke", "14\r\n-time"=>"5", "16\r\n-time"=>"10", "Submit"=>"Submit"}	
+
 
 
 

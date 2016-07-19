@@ -153,9 +153,9 @@ end
 
 
 def writetotimes(str)
-  newish_file = File.new("times.txt", "a")
-  newish_file.puts str
-  newish_file.close
+  new_file = File.new("times.txt", "a")
+  new_file.puts str
+  new_file.close
 end
 
 
