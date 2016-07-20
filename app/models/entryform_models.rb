@@ -13,6 +13,7 @@ def readeruID(thefilename)
 
 end
 
+
 #idGeneration generates the next ID number based on the state of entrants.txt
 #returns integer competitorID
 def idGeneration
@@ -156,6 +157,48 @@ def writetotimes(str)
   new_file = File.new("times.txt", "a")
   new_file.puts str
   new_file.close
+end
+
+def namelookbyID(txtfile, id)
+  idstuff = readerIDs(txtfile)
+  namestuff = readernames(txtfile)
+  idstuff.each_with_index do |chopper, index|
+    idstuff[index] = chopper.chomp
+  end
+  namestuff.each_with_index do |chopper, index|
+    namestuff[index] = chopper.chomp
+  end
+  tofindname = idstuff.index(id)
+  thename = namestuff[tofindname]
+
+  return thename
+end
+
+def readercollege(thefilename)
+  goodies = File.open(thefilename, "r")
+  collegenames = Array.new
+  goodies.readlines.each_with_index do |line, index|
+    if index%4 == 3
+      collegenames << line
+    end
+  end
+
+  return collegenames
+end
+
+def collegelookbyID(txtfile, id)
+  idstuff = readerIDs(txtfile)
+  collegestuff = readercollege(txtfile)
+  idstuff.each_with_index do |chopper, index|
+    idstuff[index] = chopper.chomp
+  end
+  collegestuff.each_with_index do |chopper, index|
+    collegestuff[index] = chopper.chomp
+  end
+  tofindcollege = idstuff.index(id)
+  thecollege = collegestuff[tofindcollege]
+
+  return thecollege
 end
 
 
