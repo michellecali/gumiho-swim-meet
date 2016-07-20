@@ -1,34 +1,24 @@
 window.addEventListener('load', function() {
 	//objects to click (header for each event)
-	var event100BS = document.getElementById('100BS');
+	var event100BS = document.getElementById('head_100BS');
 
 	//objects whose view will be changed (all the individual placers)
-	var gold100BS = document.getElementsByClassName('winners__listitem--gold');
-	var silver100BS = document.getElementsByClassName('winners__listitem--silver');
-	var bronze100BS = document.getElementsByClassName('winners__listitem--bronze');
+	var medalists100BS = document.getElementById('list_100BS')
 
-	//function to change views (from 0%height to full height)
+	//function to change views (from 0px height to full height)
 	var toggleview = function() {
+		//debugger;
 		//objects to click (header for each event)
-		var event100BS = document.getElementById('100BS');
-
-		//objects whose view will be changed (all the individual placers)
-		var gold100BS = document.getElementsByClassName('winners__listitem--gold');
-		var silver100BS = document.getElementsByClassName('winners__listitem--silver');
-		var bronze100BS = document.getElementsByClassName('winners__listitem--bronze');
-
-		if (gold100BS[0].style.height == "0px") {
-			gold100BS[0].style.height = 'auto';
-			silver100BS[0].style.height = 'auto';
-			bronze100BS[0].style.height = 'auto';
+		if (medalists100BS.style.height === "0px") {
+			medalists100BS.style.height = 'auto';
+			medalists100BS.style.width = 'auto';
 		}
 		else {
-			gold100BS[0].style.height = '0px';
-			silver100BS[0].style.height = '0px';
-			bronze100BS[0].style.height = '0px';
+			medalists100BS.style.height = '0px';
 		}
 		event100BS.removeEventListener('mousedown', toggleview);
 	};
+
 	event100BS.addEventListener('mousedown', toggleview) //without this it won't fire the first time, gets removed by function
 	event100BS.addEventListener('mouseup', toggleview)
 
