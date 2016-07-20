@@ -46,12 +46,11 @@ body{
 }
 
 nav ul ul {
-	display: none;
 	font-family: Tahoma, Verdana, sans-serif;
 	list-style: none;
 	text-align: left;
 	position: absolute;
-	height: 0%;
+	height: 0;
 	background-color: #eaf9fa;
 	text-overflow: none;
 	min-width: 130px;
@@ -60,6 +59,7 @@ nav ul ul {
 	margin-left:-20px;
 	padding: 0 20px 20px 20px;
 	border-radius: 0 0 20px 20px;
+	text-overflow: hidden;
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
 	-ms-transition: all 0.2s ease;
@@ -68,15 +68,8 @@ nav ul ul {
 }
 
 nav ul li:hover > ul {
-	display: block;
 	z-index: 10;
 	height: 225px;
-
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
 }
 
 .navlinks{
@@ -88,11 +81,6 @@ nav ul li:hover > ul {
 	padding: 0 20px 0 20px;
 	min-width: 460px;
 
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
 }
 
 .navlinks__listitem{
@@ -112,12 +100,6 @@ nav ul li:hover > ul {
 
 .navlinks__listitem:hover{
 	background-color: #eaf9fa;
-
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
 }
 
 .navlinks__listitem--current{
@@ -156,7 +138,7 @@ nav ul li:hover > ul {
 	z-index: 3;
 	box-shadow: 2px 2px 2px #279da5;
 
-		-webkit-transition: all 0.2s ease;
+	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
 	-ms-transition: all 0.2s ease;
 	-o-transition: all 0.2s ease;
@@ -353,7 +335,6 @@ nav ul li:hover > ul {
 	-ms-transition: all 0.2s ease;
 	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
-
 }
 
 .winners__listitem--silver{
@@ -369,7 +350,6 @@ nav ul li:hover > ul {
 	-ms-transition: all 0.2s ease;
 	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
-
 }
 
 .winners__listitem--bronze{
