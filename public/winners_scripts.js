@@ -9,31 +9,21 @@ window.addEventListener('load', function() {
 		medalists[i].style.height = "0px";
 	}
 
-	//function to change views (from 0px height to full height)
-	//var toggleview = function() {
-	//	//debugger;
+	function toggleview(x) {
+		if (medalists[x].style.height == "0px") {
+			medalists[x].style.height = 'auto';
+		}
+		else {
+			medalists[x].style.height = '0px';
+		}
+	}	
 
-	//	for (var i = medalists.length - 1; i >= 0; i--) {
-	//		if (medalists[i].style.height == "0px") {
-	//			medalists[i].style.height = 'auto';
-	//		}
-	//		else {
-	//			medalists[i].style.height = '0px';
-	//		}
-	//	}
+	//for (var i = eventheads.length - 1; i >= 0; i--) {
 
-
-	for (var i = eventheads.length - 1; i >= 0; i--) {
-		eventheads[i].addEventListener('mouseup', function() {
-			for (var i = medalists.length - 1; i >= 0; i--) {
-				if (medalists[i].style.height == "0px") {
-					medalists[i].style.height = 'auto';
-				}
-				else {
-					medalists[i].style.height = '0px';
-				}
-			}
-		})
-	}
+		eventheads[0].addEventListener('mouseup', function(){})
+		eventheads[1].addEventListener('mouseup', function(){})
+		eventheads[2].addEventListener('mouseup', function(){})
+		eventheads[3].addEventListener('mouseup', function(){})
+	//}
 
 });
