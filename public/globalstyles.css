@@ -52,24 +52,24 @@ nav ul ul {
 	position: absolute;
 	height: 0;
 	background-color: #eaf9fa;
-	text-overflow: none;
 	min-width: 130px;
 	width: 250px;
 	margin-top: 8px;
 	margin-left:-20px;
 	padding: 0 20px 20px 20px;
 	border-radius: 0 0 20px 20px;
-	text-overflow: hidden;
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
 	-ms-transition: all 0.2s ease;
 	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
+	display: none;
 }
 
 nav ul li:hover > ul {
 	z-index: 10;
 	height: 225px;
+	display: block;
 }
 
 .navlinks{
@@ -372,9 +372,6 @@ nav ul li:hover > ul {
 	color: white;
 }
 
-#list_100BS{
-	height: 0px;
-}
 
 
 
