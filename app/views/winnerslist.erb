@@ -3,26 +3,47 @@
 <div class="content l-content">
 	<h1 class="content__header">Winners</h1>
 	<ul class="winners__list">
-		<h2 id="head_100BS" class="winners__eventhead">100 Backstroke</h2>
-		<ol id="list_100BS" class="winners__list">
-			<li class="winners__listitem winners__listitem--gold">
-				<p class="winners__name">Fran</p>
-				<p class="winners__name">College</p>
-				<p class="winners__name">234.68 sec.</p>
-			</li>
 
-			<li class="winners__listitem winners__listitem--silver">
-				<p class="winners__name">Dude2</p>
-				<p class="winners__name">College2</p>
-				<p class="winners__name">240.55 sec.</p>
-			</li>
+	<% n =0
+	while n < @arraytheevents.size %>
 
-			<li class="winners__listitem  winners__listitem--bronze">
-				<p class="winners__name">Frank</p>
-				<p class="winners__name">College</p>
-				<p class="winners__name">260.90 sec.</p>
-			</li>
+	<h2 id="head_200BS" class="winners__eventhead"><%= @arraytheevents[n] %></h2>
+
+		<ol id="list_200BS" class="winners__list">
+
+		<% int = 0
+
+		while int < 3 && int < @arraycombo[0][n].size%>
+
+			<% if int == 0 %>
+				<li class="winners__listitem winners__listitem--gold">
+			<% end
+			if int == 1 %>
+				<li class="winners__listitem winners__listitem--silver">
+			<% end
+			if int == 2 %>
+				<li class="winners__listitem winners__listitem--bronze">
+			<% end %>
+
+
+			<p class="winners__name">
+			<%= @arraycombo[0][n][-1 - int] %>
+			</p>
+			<p class="winners__name">
+			<%= @arraycombo[2][n][-1 - int] %>
+			</p>
+			<p class="winners__name">
+			<%= @arraycombo[1][n][-1 - int] %> sec
+			</p>
+		</li>
+
+			<% int += 1
+		end %>
 		</ol>
 		
+		<% n += 1
+	end %>
+
+
 	</ul>
 </div>

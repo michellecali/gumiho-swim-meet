@@ -108,18 +108,18 @@ school4 = "Awesome College"
 # contents is wiped and the above cases are written/appended into the txt.
 
 
-multiinputwri(uID1, name1, event1, school1)
-multiinputapp(uID2, name2, event2, school2)
-multiinputapp(uID3, name3, event3, school3)
-multiinputapp(uID4, name4, event4, school4)
+# multiinputwri(uID1, name1, event1, school1)
+# multiinputapp(uID2, name2, event2, school2)
+# multiinputapp(uID3, name3, event3, school3)
+# multiinputapp(uID4, name4, event4, school4)
 
 # uncomment the below stuff and run this file in the terminal to see 
 # results of each
 
 # reader("moregoods.txt")
 # readeruID("moregoods.txt")
-puts readernames("moregoods.txt")
-puts readerevents("moregoods.txt")
+# puts readernames("moregoods.txt")
+# puts readerevents("moregoods.txt")
 # readercollege("moregoods.txt")
 
 
@@ -152,8 +152,38 @@ def peopleinevent(eventname, txtfile)
 	return participants	
 end
 
+def readerIDs(thefilename)
+	goodies = File.open(thefilename, "r")
+	iDs = Array.new
+	goodies.readlines.each_with_index do |line, index|
+		if index%4 == 0
+			iDs << line
+		end
+	end
+	return iDs
+end
 
-folks = peopleinevent("100m fly", "moregoods.txt")
+def namelookbyID(txtfile, id)
+	idstuff = readerIDs(txtfile)
+	namestuff = readernames(txtfile)
+	idstuff.each_with_index do |chopper, index|
+		idstuff[index] = chopper.chomp
+	end
+	namestuff.each_with_index do |chopper, index|
+		namestuff[index] = chopper.chomp
+	end
+	tofindname = idstuff.index(id)
+	thename = namestuff[tofindname]
+
+	return thename
+end
+
+thegoods = namelookbyID("../entrants.txt", "3")
+puts thegoods
+
+
+
+folks = peopleinevent("100m fly", "../entrants.txt")
 puts folks
 
 
