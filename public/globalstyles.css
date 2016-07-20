@@ -35,6 +35,16 @@ body{
 	letter-spacing: 5px;
 }
 
+.header:hover{
+	color: #fff;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+
+}
+
 nav ul ul {
 	display: none;
 	font-family: Tahoma, Verdana, sans-serif;
@@ -50,12 +60,23 @@ nav ul ul {
 	margin-left:-20px;
 	padding: 0 20px 20px 20px;
 	border-radius: 0 0 20px 20px;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 nav ul li:hover > ul {
 	display: block;
 	z-index: 10;
 	height: 225px;
+
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 .navlinks{
@@ -66,6 +87,12 @@ nav ul li:hover > ul {
 	padding-left: 0;
 	padding: 0 20px 0 20px;
 	min-width: 460px;
+
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 .navlinks__listitem{
@@ -75,10 +102,22 @@ nav ul li:hover > ul {
 	width: 250px;
 	text-align: center;
 	border-radius: 20px 20px 0px 0px;
+
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 .navlinks__listitem:hover{
 	background-color: #eaf9fa;
+
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 .navlinks__listitem--current{
@@ -116,6 +155,12 @@ nav ul li:hover > ul {
 	padding: 20px 80px 50px 80px;
 	z-index: 3;
 	box-shadow: 2px 2px 2px #279da5;
+
+		-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 .l-content{
@@ -251,9 +296,18 @@ nav ul li:hover > ul {
 
 .winners__eventhead{
 	font-family: Tahoma, Verdana, sans-serif;
-	color: #000;
+	color: #279da5;
 	font-weight: bolder;
 	margin-bottom: 10px;
+}
+
+.winners__eventhead:hover{
+	color: #37adb5;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 .winners__list{
@@ -262,6 +316,13 @@ nav ul li:hover > ul {
 	align-content: stretch;
 	list-style: none;
 	margin-left: -40px;
+
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+
 }
 
 .winners__listitem{
@@ -270,6 +331,13 @@ nav ul li:hover > ul {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
+
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+
 }
 
 .winners__listitem--gold{
@@ -279,6 +347,13 @@ nav ul li:hover > ul {
     background: -o-linear-gradient(#fff0b3, #ffd670); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(#fff0b3, #ffd670); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#fff0b3, #ffd670); /* Standard syntax */
+
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+
 }
 
 .winners__listitem--silver{
@@ -288,6 +363,13 @@ nav ul li:hover > ul {
     background: -o-linear-gradient(#f2f2f2, #cccccc); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(#f2f2f2, #cccccc); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#f2f2f2, #cccccc); /* Standard syntax */
+
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+
 }
 
 .winners__listitem--bronze{
@@ -297,6 +379,13 @@ nav ul li:hover > ul {
     background: -o-linear-gradient(#ffd9b3, #ffbf80); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(#ffd9b3, #ffbf80); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#ffd9b3, #ffbf80); /* Standard syntax */
+
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+
 }
 
 .winners__name{
