@@ -1,24 +1,39 @@
 window.addEventListener('load', function() {
 	//objects to click (header for each event)
-	var event200BS = document.getElementById('head_100BS');
+	var eventheads = document.getElementsByClassName('winners__eventhead');
 
 	//objects whose view will be changed (all the individual placers)
-	var medalists200BS = document.getElementById('list_100BS')
+	var medalists = document.querySelectorAll('ol.winners__list')
+
+	for (var i = medalists.length - 1; i >= 0; i--) {
+		medalists[i].style.height = "0px";
+	}
 
 	//function to change views (from 0px height to full height)
-	var toggleview = function() {
-		//debugger;
-		//objects to click (header for each event)
-		if (medalists200BS.style.height === "0px") {
-			medalists200BS.style.height = 'auto';
-		}
-		else {
-			medalists200BS.style.height = '0px';
-		}
-		event200BS.removeEventListener('mousedown', toggleview);
-	};
+	//var toggleview = function() {
+	//	//debugger;
 
-	event200BS.addEventListener('mousedown', toggleview) //without this it won't fire the first time, gets removed by function
-	event200BS.addEventListener('mouseup', toggleview)
+	//	for (var i = medalists.length - 1; i >= 0; i--) {
+	//		if (medalists[i].style.height == "0px") {
+	//			medalists[i].style.height = 'auto';
+	//		}
+	//		else {
+	//			medalists[i].style.height = '0px';
+	//		}
+	//	}
+
+
+	for (var i = eventheads.length - 1; i >= 0; i--) {
+		eventheads[i].addEventListener('mouseup', function() {
+			for (var i = medalists.length - 1; i >= 0; i--) {
+				if (medalists[i].style.height == "0px") {
+					medalists[i].style.height = 'auto';
+				}
+				else {
+					medalists[i].style.height = '0px';
+				}
+			}
+		})
+	}
 
 });
