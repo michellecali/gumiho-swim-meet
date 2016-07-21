@@ -376,14 +376,49 @@ nav ul li:hover > ul {
 	height: 0px;
 }
 
+/*
+For homepage - Michelles work*/
+
+
+.images /*the primary container*/ {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: stretch;
+}
+
+.images__Image /*field where current image goes*/{
+	height: 100%;
+	width: 100%;
+	border-radius: 20px;
+}
+.images__Description /*container for description text*/{
+	display: flex;
+	list-style:none;
+	margin:10px;
+	padding:20px;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	background: #c1edf0;
+	border-radius: 20px;
+}
+.images__DescriptionLink /*text and link for current image*/{
+	flex-basis: 100%;
+	align-items: center;
+	display: flex;
+	font-family: Tahoma, Verdana, sans-serif;
+    color: #09282a;
+    font-size: 14px;
+    text-align: center;
+	text-decoration: none;
+	font-size: 15px;
+	padding: 10px;	
+}
 
 
 
-
-
-
-
-
+/* #eaf9fa is hover color*/
 
 
 
