@@ -7,9 +7,9 @@
 	<% n =0
 	while n < @arraytheevents.size %>
 
-		<ol class="winners__list"><h2 class="winners__eventhead">
-		<%= @arraytheevents[n] %>
-		</h2>
+	<h2 id="head_200BS" class="winners__eventhead"><%= @arraytheevents[n] %></h2>
+
+		<ol id="list_200BS" class="winners__list">
 
 		<% int = 0
 
@@ -39,7 +39,6 @@
 
 			<% int += 1
 		end %>
-
 		</ol>
 		
 		<% n += 1

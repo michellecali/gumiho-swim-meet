@@ -323,7 +323,6 @@ nav ul li:hover > ul {
 }
 
 .winners__listitem--gold{
-	height: 0px;
 	background: #fff0b3; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(#fff0b3, #ffd670); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(#fff0b3, #ffd670); /* For Opera 11.1 to 12.0 */
@@ -338,7 +337,6 @@ nav ul li:hover > ul {
 }
 
 .winners__listitem--silver{
-	height: 0px;
 	background: #f2f2f2; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(#f2f2f2, #cccccc); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(#f2f2f2, #cccccc); /* For Opera 11.1 to 12.0 */
@@ -353,7 +351,6 @@ nav ul li:hover > ul {
 }
 
 .winners__listitem--bronze{
-	height: 0px;
 	background: #ffd9b3; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(#ffd9b3, #ffbf80); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(#ffd9b3, #ffbf80); /* For Opera 11.1 to 12.0 */
@@ -375,6 +372,9 @@ nav ul li:hover > ul {
 	color: white;
 }
 
+#list_100BS{
+	height: 0px;
+}
 
 
 
