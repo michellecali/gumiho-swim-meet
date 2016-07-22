@@ -5,6 +5,9 @@ window.addEventListener('load', function() {
 	//objects whose view will be changed (all the individual placers)
 	var medalists = document.querySelectorAll('ol.winners__list')
 
+	//symbols that rotate when you hover over the header
+	var symbol = document.getElementsByClassName('winners__symbol');
+
 	//hides all of the medalists to start
 	for (var i = medalists.length - 1; i >= 0; i--) {
 		medalists[i].style.height = "0px";
@@ -21,10 +24,12 @@ window.addEventListener('load', function() {
 			//if the list is hidden, it will be displayed
 			if (medalists[x].style.height == "0px") {
 				medalists[x].style.height = 'auto';
+				symbol[x].style.transform = "rotate(45deg)";
 			}
 			//if the list is not hidded, clicking on the header will hide it again
 			else {
 				medalists[x].style.height = '0px';
+				symbol[x].style.transform = "rotate(0deg)";
 			}
 		})
 	}

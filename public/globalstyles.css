@@ -293,6 +293,22 @@ nav ul li:hover > ul {
 	cursor: pointer;
 }
 
+.winners__eventhead:hover .winners__symbol{
+	animation: rotation 1s forwards;
+}
+
+.winners__symbol{
+	display: inline-block;
+	margin-right: 10px;
+	font-weight: lighter;
+	font-size: 0.8em;
+}
+
+@keyframes rotation {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(225deg);}
+}
+
 .winners__list{
 	display: flex;
 	flex-flow: column nowrap;
