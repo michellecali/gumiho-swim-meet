@@ -71,39 +71,51 @@ window.addEventListener("load", function() {
 
 	rArrow.addEventListener("click", function() {
 		var imgSrc = document.getElementById("img");
+		var imgTxt = document.getElementById("imgTxt");
 		switch (imgSrc.src) {
 			case "http://localhost:9292/Pools/Best-Collegiate-Competition-Pools.jpg":
 				imgSrc.src = images[1].src;
+				imgTxt.innerHTML = images[1].text;
 				break;
 			case "http://localhost:9292/Pools/Denison-University-Trumbull-Aquatic.jpg":
 				imgSrc.src = images[2].src;
+				imgTxt.innerHTML = images[2].text;
 				break;
 			case "http://localhost:9292/Pools/Princeton-University-Denunzio-Pool.jpg":
 				imgSrc.src = images[3].src;
+				imgTxt.innerHTML = images[3].text;
 				break;
 			case "http://localhost:9292/Pools/Gabrielsen-Pool-University-of-Georgia.jpg":
 				imgSrc.src = images[4].src;
+				imgTxt.innerHTML = images[4].text;
 				break;
 			case "http://localhost:9292/Pools/Kiphuth-Exhibition-Pool-Yale-University.jpg":
 				imgSrc.src = images[5].src;
+				imgTxt.innerHTML = images[5].text;
 				break;
 			case "http://localhost:9292/Pools/Avery-Aquatic-Stanford-University.jpg":
 				imgSrc.src = images[6].src;
+				imgTxt.innerHTML = images[6].text;
 				break;
 			case "http://localhost:9292/Pools/Freeman-Aquatic-University-of-Minnesota.jpg":
 				imgSrc.src = images[7].src;
+				imgTxt.innerHTML = images[7].text;
 				break;
 			case "http://localhost:9292/Pools/McCorkle-Aquatic-Ohio-State.jpg":
 				imgSrc.src = images[8].src;
+				imgTxt.innerHTML = images[8].text;
 				break;
 			case "http://localhost:9292/Pools/IUPUI-Natatorium-Indiana-and-Purdue.jpg":
 				imgSrc.src = images[9].src;
+				imgTxt.innerHTML = images[9].text;
 				break;
 			case "http://localhost:9292/Pools/Jamail-Texas-at-Austin.jpg":
 				imgSrc.src = images[10].src;
+				imgTxt.innerHTML = images[10].text;
 				break;
 			case "http://localhost:9292/Pools/McAuley-Aquatic-Center-Georgia-Tech.jpg":
 				imgSrc.src = images[0].src;
+				imgTxt.innerHTML = images[0].text;
 				break;
 			default: 
 				imgSrc.src = images[0].src;
