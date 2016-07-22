@@ -385,12 +385,13 @@ For homepage - Michelles work*/
 }
 
 .images__Image /*field where current image goes*/{
-	height: 100%;
-	width: 100%;
+	height: 300px;
+	width: 563px;
 	border-radius: 20px;
 }
 .images__Description /*container for description text*/{
 	display: flex;
+	flex-direction: column;
 	list-style:none;
 	margin:10px;
 	padding:20px;
@@ -400,22 +401,19 @@ For homepage - Michelles work*/
 	background: #c1edf0;
 	border-radius: 20px;
 }
-.images__DescriptionLink /*text and link for current image*/{
+.images__DescriptionLink /*text for current image*/{
 	flex-basis: 100%;
 	align-items: center;
 	display: flex;
-	font-family: Tahoma, Verdana, sans-serif;
-    color: #09282a;
-    font-size: 14px;
+	font-family: "Venera", Tahoma, Verdana, sans-serif;
+    color: #289aa4;
+	font-weight: bolder;
+	font-size: 14px;
     text-align: center;
 	text-decoration: none;
 	font-size: 15px;
-	padding: 10px;	
 }
 
-
-
-/* #eaf9fa is hover color*/
 
 
 
