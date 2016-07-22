@@ -6,3 +6,5 @@ coverage/index.html
 coverage/.resultset*
 .env
 public/uploads
+
+gumiho-swim-meet/app/controllers/secretstuff.rb
