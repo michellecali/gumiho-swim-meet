@@ -8,6 +8,9 @@
 <nav class="nav">
   <h1 class="header">SwimTron</h1>
   <ul class="navlinks">
+    <li class="navlinks__listitem <%= "navlinks__listitem--current" if @current_page == "Home" %>">
+      <a class="navlinks__link" href="/">Welcome</a>
+    </li>
     <li class="navlinks__listitem <%= "navlinks__listitem--current" if @current_page == "Contestant" %>">
       <a class="navlinks__link" href="/entry">Contestant</a>
     </li>
