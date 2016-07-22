@@ -24,12 +24,15 @@ window.addEventListener('load', function() {
 			//if the list is hidden, it will be displayed
 			if (medalists[x].style.height == "0px") {
 				medalists[x].style.height = 'auto';
+				medalists[x].style.animationPlayState = 'running'
 				symbol[x].style.transform = "rotate(45deg)";
+				symbol[x].style.animationDuration = "0s"
 			}
-			//if the list is not hidded, clicking on the header will hide it again
+			//if the list is not hidden, clicking on the header will hide it again
 			else {
 				medalists[x].style.height = '0px';
 				symbol[x].style.transform = "rotate(0deg)";
+				symbol[x].style.animationDuration = "0.8s"
 			}
 		})
 	}

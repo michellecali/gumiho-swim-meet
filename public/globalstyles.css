@@ -12,6 +12,12 @@ body{
     padding-right: 40px;
     background-attachment: fixed;
     min-width: 775px;
+
+    -webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 .nav{
@@ -294,7 +300,7 @@ nav ul li:hover > ul {
 }
 
 .winners__eventhead:hover .winners__symbol{
-	animation: rotation 1s forwards;
+	animation: rotation 0.8s ease-in-out forwards;
 }
 
 .winners__symbol{
@@ -309,18 +315,17 @@ nav ul li:hover > ul {
     to {transform: rotate(225deg);}
 }
 
+@keyframes backwardsrotation {
+	from {transform: rotate(225deg);}
+    to {transform: rotate(0deg);}
+}
+
 .winners__list{
 	display: flex;
 	flex-flow: column nowrap;
 	align-content: stretch;
 	list-style: none;
 	margin-left: -40px;
-
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
 
 }
 
@@ -330,16 +335,15 @@ nav ul li:hover > ul {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
-}
-
-.winners__listitem:hover{
 	animation-name: drop;
 	animation-duration: 1s;
+	animation-delay: 0.5s;
+	animation-play-state: paused;
 }
 
 @keyframes drop {
-	0% {height: 0px;}
-	100% {height: auto;}
+	0% {height: 0px}
+	100% {height: 50px;}
 }
 
 .winners__listitem--gold{
@@ -362,12 +366,6 @@ nav ul li:hover > ul {
     background: -o-linear-gradient(#f2f2f2, #cccccc); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(#f2f2f2, #cccccc); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#f2f2f2, #cccccc); /* Standard syntax */
-
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
 }
 
 .winners__listitem--bronze{
@@ -376,13 +374,6 @@ nav ul li:hover > ul {
     background: -o-linear-gradient(#ffd9b3, #ffbf80); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(#ffd9b3, #ffbf80); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#ffd9b3, #ffbf80); /* Standard syntax */
-
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
-
 }
 
 .winners__name{
