@@ -11,7 +11,7 @@ body{
     padding-left: 40px;
     padding-right: 40px;
     background-attachment: fixed;
-    min-width: 590px;
+    min-width: 775px;
 }
 
 .nav{
@@ -50,10 +50,9 @@ nav ul ul {
 	list-style: none;
 	text-align: left;
 	position: absolute;
-	height: 0;
 	background-color: #eaf9fa;
-	min-width: 130px;
-	width: 250px;
+	min-width: 100px;
+	width: 220px;
 	margin-top: 8px;
 	margin-left:-20px;
 	padding: 0 20px 20px 20px;
@@ -86,8 +85,8 @@ nav ul li:hover > ul {
 .navlinks__listitem{
 	padding: 10px 20px 8px 20px;
 	background-color: #c1edf0;
-	min-width: 130px;
-	width: 250px;
+	min-width: 145px;
+	width: 220px;
 	text-align: center;
 	border-radius: 20px 20px 0px 0px;
 
@@ -280,7 +279,8 @@ nav ul li:hover > ul {
 	font-family: Tahoma, Verdana, sans-serif;
 	color: #279da5;
 	font-weight: bolder;
-	margin-bottom: 10px;
+	margin-bottom: 0px;
+	padding: 10px
 }
 
 .winners__eventhead:hover{
@@ -290,6 +290,7 @@ nav ul li:hover > ul {
 	-ms-transition: all 0.2s ease;
 	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
+	cursor: pointer;
 }
 
 .winners__list{
