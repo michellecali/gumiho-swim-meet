@@ -7,6 +7,7 @@
 # The reader functions returns an array composed of either IDS, Names,
 # Events, or colleges.
 
+require "pry"
 
 def readerIDs(thefilename)
 	goodies = File.open(thefilename, "r")
@@ -67,10 +68,9 @@ def peopleinevent(eventname, txtfile)
 	namestuff = readernames(txtfile)
 
 	i = 0
-
 	participants = Array.new
-	while i < eventstuff.length
-		if eventstuff[i].any? {|w| w.include? eventname}
+	while i < eventstuff[0].length
+		if eventstuff[i].chomp.any? {|w| w.include? eventname}
 			participants << namestuff[i]
 			i+=1
 		else
@@ -79,6 +79,7 @@ def peopleinevent(eventname, txtfile)
 	end
 	return participants	
 end
+
 
 def collegeofperson(eventname, txtfile)
 	eventstuff = readerevents(txtfile)

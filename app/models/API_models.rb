@@ -7,6 +7,8 @@
 require "httparty"
 require_relative "../controllers/secretstuff.rb"
 require "pry"
+require_relative "event_model.rb"
+require_relative "winnerlist_model.rb"
 
 
 def addresswriter(str)
@@ -19,13 +21,6 @@ def addresswriter(str)
 
 	a_new_file.puts str
 end
-
-
-# addresswriter("915 South Jackson Street, Montgomery, AL")
-# addresswriter("10 Old Montgomery Highway, Birmingham, AL")
-# addresswriter("Box 4132, Flagstaff, AZ")
-# addresswriter("79 New Montgomery Street, San Francisco, CA")
-# addresswriter("4700 Pierce Street, Riverside, CA")
 
 # Once all the addresses are in each line, readeraddress will just store
 # each line within a file as its own index in an array.
@@ -43,11 +38,10 @@ def readeraddress(thefilename)
 	return addrarray
 end
 
-# latget is used if you want access to the json hash the geocoder has
-# given a specific address, (which those addresses are accessed by using
-# the array made by readeraddress)
+# latget will check the array of addresses and create a new array with
+# info about the conference that address is affiliated with
 #
-# returns latitude of address
+# Returns array of conference allegiance.
 
 def latget(spot)
 	hasher = HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address=#{spot}&key=#{API_KEY}")
@@ -76,15 +70,71 @@ def eastorwest()
 			eorwarray.push "Western"
 		end
 		i += 1
-		binding.pry
 	end
 
 	return eorwarray
 
 end
 
-checkarray = eastorwest
-puts checkarray
+
+## Everything below is in relation to making an API for users to pull
+# the hash from
+
+
+
+def allinfo()
+	eventsarray = readerevents("times.txt")
+	fillhash = {}
+
+	n = 0
+	while n < eventsarray.size
+
+	entrants_in_single_event = peopleinevent(eventsarray[n], "times.txt")
+
+		int = 0
+		while int < entrants_in_single_event.size
+			entrants_in_single_event[int] = entrants_in_single_event[int].chomp
+			int += 1
+		end
+
+	fillhash[eventsarray[n]] = entrants_in_single_event
+	n += 1
+	end
+
+	## At this point fillhash is a hash with keys being event titles
+	# and values being an array of participants
+
+	fillhash2 = {}
+	results_array = readerlistedplaces(times.txt)
+
+	m = 0
+	
+	while m < eventsarray.size
+
+		int = 0
+
+		while int < results_array[0][m].size
+
+			fillhash2[eventsarray[m]][results_array[0][m][int]] = results_array[1][m][int]
+			int += 1
+		end
+
+		m += 1
+
+	end
+
+
+
+	return fillhash2
+end
+
+
+
+
+
+
+
+
 
 
 
