@@ -20,10 +20,45 @@ window.addEventListener('load', function() {
 
 	//for (var i = eventheads.length - 1; i >= 0; i--) {
 
-		eventheads[0].addEventListener('mouseup', function(){})
-		eventheads[1].addEventListener('mouseup', function(){})
-		eventheads[2].addEventListener('mouseup', function(){})
-		eventheads[3].addEventListener('mouseup', function(){})
-	//}
+		eventheads[0].addEventListener('mouseup', function(){
+			if (medalists[0].style.height == "0px") {
+				medalists[0].style.height = 'auto';
+			}
+			else {
+				medalists[0].style.height = '0px';
+			}
+		})
+		eventheads[1].addEventListener('mouseup', function(){
+			if (medalists[1].style.height == "0px") {
+				medalists[1].style.height = 'auto';
+			}
+			else {
+				medalists[1].style.height = '0px';
+			}
+		})
+		eventheads[2].addEventListener('mouseup', function(){
+			if (medalists[2].style.height == "0px") {
+				medalists[2].style.height = 'auto';
+			}
+			else {
+				medalists[2].style.height = '0px';
+			}
+		})
+		eventheads[3].addEventListener('mouseup', function(){
+			if (medalists[3].style.height == "0px") {
+				medalists[3].style.height = 'auto';
+			}
+			else {
+				medalists[3].style.height = '0px';
+			}
+		})
+		eventheads[4].addEventListener('mouseup', function(){
+			if (medalists[4].style.height == "0px") {
+				medalists[4].style.height = 'auto';
+			}
+			else {
+				medalists[4].style.height = '0px';
+			}
+		})
 
 });
