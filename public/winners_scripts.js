@@ -24,7 +24,6 @@ window.addEventListener('load', function() {
 			//if the list is hidden, it will be displayed
 			if (medalists[x].style.height == "0px") {
 				medalists[x].style.height = 'auto';
-				medalists[x].style.animationPlayState = 'running'
 				symbol[x].style.transform = "rotate(45deg)";
 				symbol[x].style.animationDuration = "0s"
 			}

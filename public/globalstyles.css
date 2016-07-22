@@ -337,8 +337,7 @@ nav ul li:hover > ul {
 	justify-content: space-between;
 	animation-name: drop;
 	animation-duration: 1s;
-	animation-delay: 0.5s;
-	animation-play-state: paused;
+	animation-fill-mode: forwards;
 }
 
 @keyframes drop {
