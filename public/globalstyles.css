@@ -330,13 +330,16 @@ nav ul li:hover > ul {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
+}
 
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
+.winners__listitem:hover{
+	animation-name: drop;
+	animation-duration: 1s;
+}
 
+@keyframes drop {
+	0% {height: 0px;}
+	100% {height: auto;}
 }
 
 .winners__listitem--gold{
@@ -422,7 +425,7 @@ For homepage - Michelles work*/
 	flex-basis: 100%;
 	align-items: center;
 	display: flex;
-	font-family: "Venera", Tahoma, Verdana, sans-serif;
+	font-family: Tahoma, Verdana, sans-serif;
     color: #289aa4;
 	font-weight: bolder;
 	font-size: 14px;
