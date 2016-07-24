@@ -1,1 +1,0 @@
-# gumiho-swim-meet

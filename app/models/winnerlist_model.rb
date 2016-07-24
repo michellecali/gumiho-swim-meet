@@ -13,42 +13,65 @@
 # 
 # Returns single name corresponding to ID
 
+require "pry"
+
 def namelookbyID(txtfile, id)
   idstuff = readerIDs(txtfile)
   namestuff = readernames(txtfile)
+
   idstuff.each_with_index do |chopper, index|
     idstuff[index] = chopper.chomp
   end
   namestuff.each_with_index do |chopper, index|
     namestuff[index] = chopper.chomp
   end
+
   tofindname = idstuff.index(id)
   thename = namestuff[tofindname]
 
   return thename
 end
 
+# Creates list of colleges
+#
+# returns list as array
 
 def collegelookbyID(txtfile, id)
   idstuff = readerIDs(txtfile)
   collegestuff = readercollege(txtfile)
+ 
   idstuff.each_with_index do |chopper, index|
     idstuff[index] = chopper.chomp
   end
   collegestuff.each_with_index do |chopper, index|
     collegestuff[index] = chopper.chomp
   end
+
   tofindcollege = idstuff.index(id)
   thecollege = collegestuff[tofindcollege]
 
   return thecollege
 end
 
-# Creates list of colleges
-#
-# returns list as array
+def addresslookbyID(txtfile, id)
+  idstuff = readerIDs(txtfile)
+  addressstuff = readeraddress(txtfile)
+ 
+  idstuff.each_with_index do |chopper, index|
+    idstuff[index] = chopper.chomp
+  end
+  addressstuff.each_with_index do |chopper, index|
+    addressstuff[index] = chopper.chomp
+  end
 
-def readerevents(thefilename)
+  tofindaddress = idstuff.index(id)
+  theaddress = addressstuff[tofindaddress]
+
+  return theaddress
+end
+
+
+def readereventsfromtimes(thefilename)
 	moregoods = File.open(thefilename, "r")
 	wholeline = Array.new
 	moregoods.readlines.each do |line| # Line being "EventA, Time1, ID1, ..."
@@ -164,33 +187,41 @@ def readerlistedplaces(thefilename)
 		# they are arranged! Newarrays are reset for same purposes from above
 	end
 
-	# The results page shows three thins, Name, Time, and college for each event
-	# ABOVE we have assembled nice 2D arrays for Names and Times, BELOW we 
-	# do the same thing for colleges.
+	# The results page shows three things, Name, Time, and college for each event
+	# ABOVE we have assembled nice 2D arrays for IDs and Times, BELOW we 
+	# do the same thing for colleges, names, and addresses.
 	toparrayofcolleges = []
+	toparrayofaddress = []
 	pushingarray = []
+	anotherpushing = []
+
 
 	toparrayofids.each do |replacenames|
 		replacenames.each_with_index do |names, index|
 			pushingarray[index] = collegelookbyID("entrants.txt", replacenames[index])
+			anotherpushing[index] = addresslookbyID("entrants.txt", replacenames[index])
 			replacenames[index] = namelookbyID("entrants.txt", replacenames[index])
+
 
 		end
 		toparrayofcolleges.push pushingarray
+		toparrayofaddress.push anotherpushing
 		pushingarray = []
+		anotherpushing = []
 	end
 
 
-
 comboarray = []
+
 comboarray.push toparrayofids
 comboarray.push toparrayoftimes
 comboarray.push toparrayofcolleges
+
 return comboarray
 
 end
 
-
+readerlistedplaces("times.txt")
 
 
 

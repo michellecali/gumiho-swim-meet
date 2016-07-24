@@ -7,12 +7,11 @@
 require "httparty"
 require_relative "../controllers/secretstuff.rb"
 require "pry"
-require_relative "event_model.rb"
-require_relative "winnerlist_model.rb"
+
 
 
 def addresswriter(str)
-	a_new_file = File.new("../../address.txt", "a")
+	a_new_file = File.new("address.txt", "w")
 
 	while str.index(" ") != nil
 		to_plus_index = str.index(" ")
@@ -22,20 +21,39 @@ def addresswriter(str)
 	a_new_file.puts str
 end
 
-# Once all the addresses are in each line, readeraddress will just store
-# each line within a file as its own index in an array.
-#
-# Returns array of adresses
+def addressapp(str)
+	a_new_file = File.new("address.txt", "a")
 
-def readeraddress(thefilename)
-	addr = File.open(thefilename, "r")
-	addrarray = Array.new
-	addr.readlines.each do |line|
-		line.chomp
-		addrarray << line
+	while str.index(" ") != nil
+		to_plus_index = str.index(" ")
+		str[to_plus_index] = "+"
 	end
 
-	return addrarray
+	a_new_file.puts str
+end
+
+
+def conffromcollegearr(collegename)
+	stuff = File.open("address.txt", "r")
+	addrconf = []
+
+	stuff.each_with_index do |it, index|
+		addrconf[index] = it.chomp.split(", ")
+	end
+
+	confarr = []
+	i = 0
+	n = 0
+	while i < addrconf.length
+		if addrconf[i].include?(collegename.chomp)
+			confarr[n] = addrconf[i][1]
+			n += 1
+		end
+
+		i += 1
+	end
+
+	return confarr
 end
 
 # latget will check the array of addresses and create a new array with
@@ -50,26 +68,14 @@ def latget(spot)
 	return tochecklat
 end
 
-theaddr = readeraddress("address.txt")
 
-thelat = latget(theaddr[0])
+def eastorwest(theaddr)
 
-
-def eastorwest()
-
-	theaddr = readeraddress("address.txt")
-
-	i = 0
-	eorwarray = [] 
-	
-	while i < theaddr.size
-		if latget(theaddr[i]) > -95.2075
-			eorwarray.push "Eastern"
-		end
-		if latget(theaddr[i]) < -95.2075
-			eorwarray.push "Western"
-		end
-		i += 1
+	if latget(theaddr) > -95.2075
+		eorwarray = "Eastern"
+	end
+	if latget(theaddr) < -95.2075
+		eorwarray = "Western"
 	end
 
 	return eorwarray

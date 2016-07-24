@@ -1,35 +1,8 @@
-# Loops through contents of the file, seeking only the UID.
-# 
-# Returns an Array containing all of the UIDs.
-def readeruID(thefilename)
-  allUIDs = []
-
-  goodies = File.open(thefilename, "r")
-  goodies.readlines.each_with_index do |line, index|
-    (allUIDs << line) if (index % 4 == 0)
-  end
-
-  return allUIDs
-
-end
-
-# 
-def readercollege(thefilename)
-  goodies = File.open(thefilename, "r")
-  collegenames = Array.new
-  goodies.readlines.each_with_index do |line, index|
-    if index%4 == 3
-      collegenames << line
-    end
-  end
-
-  return collegenames
-end
 
 #idGeneration generates the next ID number based on the state of entrants.txt
 #returns integer competitorID
 def idGeneration
-  previousCompetitorId = readeruID("entrants.txt").length
+  previousCompetitorId = readerIDs("entrants.txt").length
 
 	#need to set competitorID to retrieve previous from storage (if it exists)
 	competitorID = previousCompetitorId + 1
@@ -145,24 +118,29 @@ end
 # multiinput functions used to overwrite and append contents in 
 # entrants.txt. they are written into the flatstorage as 4 lines
 # as ID, athlete name, events signed up for, and college.
-def multiinputapp(uID, athlete, event, college)
+def multiinputapp(uID, athlete, event, college, address)
   newish_file = File.new("entrants.txt", "a")
   newish_file.puts uID 
   newish_file.puts athlete 
   newish_file.puts event
   newish_file.puts college
+  newish_file.puts address
   newish_file.close
-
 
 end
 
-def multiinputwri(uID, athlete, event, college)
-  newish_file = File.new("entrants.txt", "w")
-  newish_file.puts uID
-  newish_file.puts athlete 
-  newish_file.puts event
-  newish_file.puts college
-  newish_file.close
+def writetoaddr(college, address)
+  anew_file = File.new("address.txt", "a")
+
+  while address.index(" ") != nil
+    to_plus_index = address.index(" ")
+    address[to_plus_index] = "+"
+  end
+
+  conf = eastorwest(address)
+
+  anew_file.puts college + ", " + conf
+  anew_file.close
 
 end
 
