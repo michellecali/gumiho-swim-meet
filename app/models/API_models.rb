@@ -7,8 +7,9 @@
 require "httparty"
 require_relative "../controllers/secretstuff.rb"
 require "pry"
-
-
+require_relative "entryform_models.rb"
+require_relative "event_model.rb"
+require_relative "winnerlist_model.rb"
 
 def addresswriter(str)
 	a_new_file = File.new("address.txt", "w")
@@ -89,13 +90,13 @@ end
 
 
 def allinfo()
-	eventsarray = readerevents("times.txt")
+	eventsarray = readereventsfromtimes("times.txt")
 	fillhash = {}
 
 	n = 0
 	while n < eventsarray.size
 
-	entrants_in_single_event = peopleinevent(eventsarray[n], "times.txt")
+	entrants_in_single_event = peopleinevent(eventsarray[n], "entrants.txt")
 
 		int = 0
 		while int < entrants_in_single_event.size
@@ -111,7 +112,8 @@ def allinfo()
 	# and values being an array of participants
 
 	fillhash2 = {}
-	results_array = readerlistedplaces(times.txt)
+	fillhash3 = {}
+	results_array = readerlistedplaces("times.txt")
 
 	m = 0
 	
@@ -121,15 +123,15 @@ def allinfo()
 
 		while int < results_array[0][m].size
 
-			fillhash2[eventsarray[m]][results_array[0][m][int]] = results_array[1][m][int]
+			fillhash3[results_array[0][m][int]] = results_array[1][m][int].chomp
 			int += 1
 		end
 
+		fillhash2[eventsarray[m]] = fillhash3
+		fillhash3 = {}
 		m += 1
 
 	end
-
-
 
 	return fillhash2
 end

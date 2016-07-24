@@ -12,7 +12,11 @@
 # Takes a flatstorage file (entrants.txt) and retrieves ID and name info
 # 
 # Returns single name corresponding to ID
-
+require_relative "../controllers/secretstuff.rb"
+require "pry"
+require_relative "entryform_models.rb"
+require_relative "event_model.rb"
+require_relative "API_models.rb"
 require "pry"
 
 def namelookbyID(txtfile, id)
@@ -99,6 +103,7 @@ end
 def readerlistedplaces(thefilename)
 	moregoods = File.open(thefilename, "r")
 	wholeline = Array.new
+
 	moregoods.readlines.each do |line|
 		line.chomp
 		wholeline << line.split(",") # Similar to readerevents, wholeline
@@ -110,6 +115,7 @@ def readerlistedplaces(thefilename)
 		wholeline[j].delete_at(0) # Deletes Events from array
 		j+=1
 	end
+
 	# At this point the Times and IDs are isolated in two dimentional
 	# wholeline array as [[Time1, ID1, Time2, ID2], [Time1, ID1, ...],...]
 	arrayoftimes = Array.new
@@ -151,7 +157,7 @@ def readerlistedplaces(thefilename)
 		# arrayofids is set to blank to be ready for next do loop
 		# without this reset, fillarrays would include duplicates.
 	end
-	
+
 	## Now that we got times seperated from IDS, we can NOW arrange times
 	# from largest to smallest for the times.
 	#
@@ -169,7 +175,17 @@ def readerlistedplaces(thefilename)
 		while n < stuff.size
 
 			idindexspot = fillarraytimes.index(stuff) 
+
+			stuff.each_with_index do |morestuff, index|
+				stuff[index] = morestuff.chomp.to_f
+			end
+
 			topspot = stuff.index(stuff.max) # Finds the highest time's index
+
+			stuff.each_with_index do |morestuff, index|
+				stuff[index] = morestuff.to_s
+			end
+
 			newarrayoftimes << stuff[topspot] # pushes highest time to newarray
 			newarrayofids << fillarrayids[idindexspot][topspot] # pushes ID corresponding to highest time
 			stuff[topspot] = ""
@@ -221,7 +237,6 @@ return comboarray
 
 end
 
-readerlistedplaces("times.txt")
 
 
 
