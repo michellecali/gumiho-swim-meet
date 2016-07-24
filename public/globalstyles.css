@@ -12,6 +12,12 @@ body{
     padding-right: 40px;
     background-attachment: fixed;
     min-width: 775px;
+
+    -webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 .nav{
@@ -293,18 +299,33 @@ nav ul li:hover > ul {
 	cursor: pointer;
 }
 
+.winners__eventhead:hover .winners__symbol{
+	animation: rotation 0.8s ease-in-out forwards;
+}
+
+.winners__symbol{
+	display: inline-block;
+	margin-right: 10px;
+	font-weight: lighter;
+	font-size: 0.8em;
+}
+
+@keyframes rotation {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(225deg);}
+}
+
+@keyframes backwardsrotation {
+	from {transform: rotate(225deg);}
+    to {transform: rotate(0deg);}
+}
+
 .winners__list{
 	display: flex;
 	flex-flow: column nowrap;
 	align-content: stretch;
 	list-style: none;
 	margin-left: -40px;
-
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
 
 }
 
@@ -314,13 +335,14 @@ nav ul li:hover > ul {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
+	animation-name: drop;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
 
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
-
+@keyframes drop {
+	0% {height: 0px}
+	100% {height: 50px;}
 }
 
 .winners__listitem--gold{
@@ -343,12 +365,6 @@ nav ul li:hover > ul {
     background: -o-linear-gradient(#f2f2f2, #cccccc); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(#f2f2f2, #cccccc); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#f2f2f2, #cccccc); /* Standard syntax */
-
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
 }
 
 .winners__listitem--bronze{
@@ -357,13 +373,6 @@ nav ul li:hover > ul {
     background: -o-linear-gradient(#ffd9b3, #ffbf80); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(#ffd9b3, #ffbf80); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#ffd9b3, #ffbf80); /* Standard syntax */
-
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
-
 }
 
 .winners__name{
@@ -386,12 +395,13 @@ For homepage - Michelles work*/
 }
 
 .images__Image /*field where current image goes*/{
-	height: 100%;
-	width: 100%;
+	height: 300px;
+	width: 563px;
 	border-radius: 20px;
 }
 .images__Description /*container for description text*/{
 	display: flex;
+	flex-direction: column;
 	list-style:none;
 	margin:10px;
 	padding:20px;
@@ -401,22 +411,19 @@ For homepage - Michelles work*/
 	background: #c1edf0;
 	border-radius: 20px;
 }
-.images__DescriptionLink /*text and link for current image*/{
+.images__DescriptionLink /*text for current image*/{
 	flex-basis: 100%;
 	align-items: center;
 	display: flex;
 	font-family: Tahoma, Verdana, sans-serif;
-    color: #09282a;
-    font-size: 14px;
+    color: #289aa4;
+	font-weight: bolder;
+	font-size: 14px;
     text-align: center;
 	text-decoration: none;
 	font-size: 15px;
-	padding: 10px;	
 }
 
-
-
-/* #eaf9fa is hover color*/
 
 
 
