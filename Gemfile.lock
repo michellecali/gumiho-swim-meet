@@ -89,6 +89,7 @@ DEPENDENCIES
   dotenv
   httparty
   inch
+  json
   minitest-rg
   pry
   rake

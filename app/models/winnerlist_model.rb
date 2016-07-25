@@ -16,7 +16,6 @@ require_relative "../controllers/secretstuff.rb"
 require "pry"
 require_relative "entryform_models.rb"
 require_relative "event_model.rb"
-require_relative "API_models.rb"
 require "pry"
 
 def namelookbyID(txtfile, id)

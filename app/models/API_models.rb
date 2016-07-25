@@ -57,6 +57,7 @@ def conffromcollegearr(collegename)
 	return confarr
 end
 
+
 # latget will check the array of addresses and create a new array with
 # info about the conference that address is affiliated with
 #
@@ -133,13 +134,25 @@ def allinfo()
 
 	end
 
-	return fillhash2
+	fillhash4 = {}
+
+	collconfarr = File.open("address.txt", "r")
+
+	collconfarr.each do |thing|
+		thing = thing.split(", ")
+		fillhash4[thing[0]] = thing[1].chomp
+	end
+
+allhash = {}
+allhash["Entrants in event"] = fillhash
+allhash["Results of event"] = fillhash2
+allhash["Conference of college"] = fillhash4
+
+return allhash
+
+
+
 end
-
-
-
-
-
 
 
 
