@@ -47,5 +47,5 @@ MyApp.post "/swimmers/new" do
 	writetoaddr(college, address)
 
 	# Sends admin back to the entryform page
-	erb :"form/entryform"
+	#erb :"form/entryform"
 end
