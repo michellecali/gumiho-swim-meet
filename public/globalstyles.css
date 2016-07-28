@@ -335,7 +335,7 @@ nav ul li:hover > ul {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
-	animation-name: drop;
+	animation-name: ;
 	animation-duration: 1s;
 	animation-fill-mode: forwards;
 }
