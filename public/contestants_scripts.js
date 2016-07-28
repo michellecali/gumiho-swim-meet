@@ -13,13 +13,7 @@ window.addEventListener('load', function(){
 
 		contestantRequest.addEventListener('load', function(){
 			alert('Success!')
-
-			//all checkboxes
-			var inputs = document.querySelectorAll('li input');
-
-			for (var i = 0; i < inputs.length; i++) {
-				inputs[i]='off';
-			}
+			form.reset();
 		})
 
 		contestantRequest.addEventListener('abort', function(){
