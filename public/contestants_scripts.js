@@ -4,15 +4,15 @@ window.addEventListener('load', function(){
 	var form = document.getElementById('entryform');
 	form.addEventListener('submit', function(e){
 
-		e.preventDefault();
+		e.preventDefault()
 
-		var contestantRequest = New XMLHttpRequest();
+		var contestantRequest = new XMLHttpRequest();
 
 		contestantRequest.open('POST', '/swimmers/new');
 		contestantRequest.send();
 
 		contestantRequest.addEventListener('load', function(r){
-			alert('Submission successful');
+			debugger;
 		})
 
 	})

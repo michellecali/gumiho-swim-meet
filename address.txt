@@ -9,3 +9,5 @@ University of Iowa, Eastern
 Tulsa U, Western
 UNL, Western
 College of Hair Design, Western
+NYU, Eastern
+Yale, Eastern
