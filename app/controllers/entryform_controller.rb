@@ -15,8 +15,6 @@ MyApp.post "/swimmers/new" do
 	college = params['College']
 	address = params['Address']
 
-	binding.pry
-
 	# Fetching all possible params for all events. If statements below will check
 	# if there is indeed a "on" ("on" is what the html checklist does if it was
 	# checked) for each event ID.
@@ -47,7 +45,6 @@ MyApp.post "/swimmers/new" do
 	college = params['College']
 	address = params['Address']
 	writetoaddr(college, address)
-
 
 	# Sends admin back to the entryform page
 	erb :"form/entryform"
