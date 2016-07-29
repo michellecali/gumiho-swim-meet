@@ -15,6 +15,7 @@ MyApp.post "/swimmers/new" do
 	college = params['College']
 	address = params['Address']
 
+
 	# Fetching all possible params for all events. If statements below will check
 	# if there is indeed a "on" ("on" is what the html checklist does if it was
 	# checked) for each event ID.
@@ -30,6 +31,7 @@ MyApp.post "/swimmers/new" do
 	stuffs500FR = params['500FR']
 	stuffs100BU = params['100BU']
 	stuffs400IM = params['400IM']
+
 
 	# String containing all of the contestant's registered events.
 	eventstring = checkIfInEvent(stuffs1650F, stuffs200FR, stuffs100BA, stuffs100BR, stuffs200BU, stuffs50FRE, stuffs100FR, stuffs200BA, stuffs200BR, stuffs500FR, stuffs100BU, stuffs400IM)

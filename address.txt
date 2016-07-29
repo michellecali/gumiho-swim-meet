@@ -10,3 +10,6 @@ Tulsa U, Western
 UNL, Western
 College of Hair Design, Western
 NYU, Eastern
+UNL, Western
+UNL, Western
+asdf, Eastern
