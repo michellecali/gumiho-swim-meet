@@ -15,3 +15,13 @@ UNL, Western
 OCS, Western
 USC, Western
 Yale, Eastern
+TCU, Western
+Johns Hopkins, Eastern
+UNK, Western
+Le Cordon Bleu, Eastern
+Creighton, Western
+Yale, Eastern
+NYU, Eastern
+sd, Eastern
+sd, Eastern
+TCU, Western

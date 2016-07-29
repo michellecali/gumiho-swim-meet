@@ -8,6 +8,8 @@ window.addEventListener('load', function(){
 
 		e.preventDefault()
 
+		var successwindow = document.getElementById('successalert');
+
 		var contestantRequest = new XMLHttpRequest();
 
 		contestantRequest.open('post', '/swimmers/new');
@@ -15,7 +17,12 @@ window.addEventListener('load', function(){
 
 
 		contestantRequest.addEventListener('load', function(){
-			alert('Success!')
+
+			successwindow.style.display = 'block';
+			successwindow.addEventListener('click', function(){
+				successwindow.style.display = 'none';
+			})
+
 			form.reset();
 		});
 
