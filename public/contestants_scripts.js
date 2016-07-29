@@ -8,11 +8,12 @@ window.addEventListener('load', function(){
 
 		var contestantRequest = new XMLHttpRequest();
 
-		contestantRequest.open('POST', '/swimmers/new');
+		contestantRequest.open('post', '/swimmers/new');
 		contestantRequest.send();
 
-		contestantRequest.addEventListener('load' function(){
+		contestantRequest.addEventListener('loadstart', function(e){
 			debugger;
+			alert();
 		});
 
 		contestantRequest.addEventListener('load', function(){
