@@ -72,7 +72,7 @@ nav ul ul {
 }
 
 nav ul li:hover > ul {
-	z-index: 10;
+	z-index: 6;
 	height: 225px;
 	display: block;
 }
@@ -109,7 +109,6 @@ nav ul li:hover > ul {
 
 .navlinks__listitem--current{
 	background-color: #FFF;
-	z-index: 4;
 }
 .navlinks__listitem--current:hover{
 	background-color: #FFF;
@@ -279,6 +278,20 @@ nav ul li:hover > ul {
 	list-style: none;
 }
 
+.modal{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	background: rgba(0,0,0,0.5);
+	z-index: 5;
+}
+
+.modal__wrapper{
+	display: none;
+}
+
 
 .winners{}
 
@@ -336,7 +349,6 @@ nav ul li:hover > ul {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
-	animation-name: ;
 	animation-duration: 1s;
 	animation-fill-mode: forwards;
 }
