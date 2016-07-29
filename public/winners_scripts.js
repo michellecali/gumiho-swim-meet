@@ -20,7 +20,7 @@ window.addEventListener('load', function() {
 	//
 	//x is the position of a header in eventhead and the corresponding list of medalists
 	function makeEventListener(x){
-		eventheads[x].addEventListener('mouseup', function(){
+		eventheads[x].addEventListener('click', function(){
 			//if the list is hidden, it will be displayed
 			if (medalists[x].style.height == "0px") {
 				medalists[x].style.height = 'auto';

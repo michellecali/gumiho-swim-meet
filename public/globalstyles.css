@@ -177,6 +177,7 @@ nav ul li:hover > ul {
 
 .competitors__listitem{
 	margin-left: -3em;
+	margin-bottom: 4px;
 	padding: 0px 20px 0px 20px;
 	border-radius: 12px;
 	display: flex;
