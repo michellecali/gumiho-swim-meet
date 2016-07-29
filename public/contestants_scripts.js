@@ -1,26 +1,17 @@
 window.addEventListener('load', function(){
 
 	//need to cancel the page reload on form submission
-	var form = document.getElementById('entryform');
+	var form = document.querySelector('form');
 	form.addEventListener('submit', function(e){
 
-		var entryformParams = new FormData();
-
-		for (var i = 0; i < 3; i++) {
-			formDataValues.append(form[i].name, form[i].value);
-			debugger;
-		}
-
-		debugger;
+		var entryformParams = new FormData(form);
 
 		e.preventDefault()
-
-		var contestantData = new FormData();
 
 		var contestantRequest = new XMLHttpRequest();
 
 		contestantRequest.open('post', '/swimmers/new');
-		contestantRequest.send();
+		contestantRequest.send(entryformParams);
 
 
 		contestantRequest.addEventListener('load', function(){
