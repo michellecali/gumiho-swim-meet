@@ -12,4 +12,6 @@ College of Hair Design, Western
 NYU, Eastern
 UNL, Western
 UNL, Western
-asdf, Eastern
+OCS, Western
+USC, Western
+Yale, Eastern
