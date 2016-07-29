@@ -20,8 +20,11 @@ window.addEventListener('load', function(){
 
 			successwindow.style.display = 'block';
 			successwindow.addEventListener('click', function(){
-				successwindow.style.display = 'none';
+				hideWindow();
 			})
+			function hideWindow() {
+				successwindow.style.display = 'none';
+			}
 
 			form.reset();
 		});
