@@ -11,14 +11,18 @@ window.addEventListener('load', function(){
 		contestantRequest.open('POST', '/swimmers/new');
 		contestantRequest.send();
 
+		contestantRequest.addEventListener('load' function(){
+			debugger;
+		});
+
 		contestantRequest.addEventListener('load', function(){
 			alert('Success!')
 			form.reset();
-		})
+		});
 
 		contestantRequest.addEventListener('abort', function(){
 			alert('Something went wrong')
-		})
+		});
 
 	})
 
