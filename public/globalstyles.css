@@ -284,16 +284,24 @@ nav ul li:hover > ul {
 	left: 0;
 	height: 100vh;
 	width: 100vw;
-	background: rgba(0,0,0,0.5);
+	background: rgba(10,30,40,0.5);
 	z-index: 5;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
 }
 
 .modal__wrapper{
 	display: none;
 }
 
-
-.winners{}
+.modal__box{
+	background-color: #FFF;
+	padding: 10px 45px;
+	text-align: center;
+	border-radius: 10px;
+}
 
 .winners__eventhead{
 	font-family: Tahoma, Verdana, sans-serif;
