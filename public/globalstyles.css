@@ -73,7 +73,6 @@ nav ul ul {
 
 nav ul li:hover > ul {
 	z-index: 6;
-	height: 225px;
 	display: block;
 }
 
@@ -357,8 +356,6 @@ nav ul li:hover > ul {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
-	animation-duration: 1s;
-	animation-fill-mode: forwards;
 }
 
 @keyframes drop {

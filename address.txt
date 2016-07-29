@@ -22,12 +22,7 @@ Le Cordon Bleu, Eastern
 Creighton, Western
 Yale, Eastern
 NYU, Eastern
-sd, Eastern
-sd, Eastern
 TCU, Western
 USC, Western
 University of Hawaii at Hilo, Western
-asdf, Eastern
-asdf, Eastern
-dfgwrgq, Western
-qer, Eastern
+UNO, Western
