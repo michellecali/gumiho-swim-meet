@@ -23,3 +23,4 @@ gem 'inch', require: false
 
 gem 'httparty'
 gem 'json'
+gem 'sqlite3'
